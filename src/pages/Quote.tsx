@@ -5,7 +5,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Card, CardContent } from "@/components/ui/card";
 import { Checkbox } from "@/components/ui/checkbox";
-import { ChevronRight, ChevronLeft } from "lucide-react";
+import { ChevronRight, ChevronLeft, MapPin, Phone } from "lucide-react";
 import aboutTeam from "@/assets/about-team.jpg";
 
 const Quote = () => {
@@ -238,7 +238,7 @@ const Quote = () => {
                         </label>
                         <Input 
                           type="tel"
-                          placeholder="+1 (234) 567-8900"
+                          placeholder="+92 300 8690691"
                           value={formData.phone}
                           onChange={(e) => setFormData({...formData, phone: e.target.value})}
                         />
@@ -346,6 +346,47 @@ const Quote = () => {
               </div>
             </CardContent>
           </Card>
+          <div className="mt-12 grid gap-6 md:grid-cols-3">
+            <div className="flex items-start gap-3 p-4 rounded-xl bg-white border border-[#e1e6e2] shadow-sm">
+              <div className="p-3 rounded-full bg-[#1f5a45]/10">
+                <MapPin className="w-5 h-5 text-[#1f5a45]" />
+              </div>
+              <div>
+                <h3 className="text-sm font-semibold text-[#123326] mb-1">Head Office</h3>
+                <p className="text-xs text-muted-foreground leading-relaxed">
+                  Faisal Colony Street #01, Plot #01, Arifwala Road, Sahiwal
+                </p>
+              </div>
+            </div>
+
+            <div className="flex items-start gap-3 p-4 rounded-xl bg-white border border-[#e1e6e2] shadow-sm">
+              <div className="p-3 rounded-full bg-[#1f5a45]/10">
+                <MapPin className="w-5 h-5 text-[#1f5a45]" />
+              </div>
+              <div>
+                <h3 className="text-sm font-semibold text-[#123326] mb-1">Engineering Works</h3>
+                <p className="text-xs text-muted-foreground leading-relaxed">
+                  06 km Sahiwal Arifwala Road, Sahiwal
+                </p>
+              </div>
+            </div>
+
+            <div className="flex items-start gap-3 p-4 rounded-xl bg-white border border-[#e1e6e2] shadow-sm">
+              <div className="p-3 rounded-full bg-[#1f5a45]/10">
+                <Phone className="w-5 h-5 text-[#1f5a45]" />
+              </div>
+              <div>
+                <h3 className="text-sm font-semibold text-[#123326] mb-1">Contact Details</h3>
+                <p className="text-xs text-muted-foreground leading-relaxed whitespace-pre-line">
+                  C.E.O: Mr. Amir Saeed - +92 300 8690691
+                  {"\n"}
+                  Director: Mr. Mian Ammar Usama - +92 300 4493333, +92 316 4044444
+                  {"\n"}
+                  Email: agktrading365@gmail.com
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
     </div>

@@ -102,9 +102,26 @@ const Footer = () => {
               <ArrowRight className="w-4 h-4" />
             </button>
             <div className="mt-5 space-y-2 text-sm text-primary-foreground/90">
-              <div className="flex items-start gap-2"><MapPin className="w-4 h-4 mt-0.5" /> Railway Road Sahiwal, Punjab, Pakistan</div>
-              <div className="flex items-center gap-2"><Phone className="w-4 h-4" /> +92-40-4463391</div>
-              <div className="flex items-center gap-2"><Mail className="w-4 h-4" /> info@aktraders.co</div>
+              <div className="flex items-start gap-2">
+                <MapPin className="w-4 h-4 mt-0.5" />
+                <span>Faisal Colony Street #01, Plot #01, Arifwala Road, Sahiwal</span>
+              </div>
+              <div className="flex items-start gap-2">
+                <MapPin className="w-4 h-4 mt-0.5" />
+                <span>06 km Sahiwal Arifwala Road, Sahiwal</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <Phone className="w-4 h-4" />
+                <span>C.E.O: Mr. Amir Saeed - +92 300 8690691</span>
+              </div>
+              <div className="flex items-start gap-2">
+                <Phone className="w-4 h-4 mt-0.5" />
+                <span>Director: Mr. Mian Ammar Usama - +92 300 4493333, +92 316 4044444</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <Mail className="w-4 h-4" />
+                <span>agktrading365@gmail.com</span>
+              </div>
             </div>
           </div>
         </div>
