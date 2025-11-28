@@ -3,13 +3,13 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight, CheckCircle2 } from "lucide-react";
 import productsImage from "@/assets/products-showcase.jpg";
 
-// Shared product images from Home page
+// Real product images from public folders
 const productImages = [
-  "https://images.unsplash.com/photo-1513828583688-c52646db42da?q=80&w=800&auto=format&fit=crop",
-  "https://images.unsplash.com/photo-1627807452369-a2cd0b5ca56f?q=80&w=800&auto=format&fit=crop",
-  "https://images.unsplash.com/photo-1647427060118-4911c9821b82?q=80&w=800&auto=format&fit=crop",
-  "https://images.unsplash.com/photo-1664087783968-0cd7deee8390?q=80&w=800&auto=format&fit=crop",
-  "https://images.unsplash.com/photo-1513828583688-c52646db42da?q=80&w=800&auto=format&fit=crop",
+  "/Gas & Oil Steam Boiler/1.jpeg.jpg",
+  "/Water Tube Steam Boiler/1.jpeg.jpg",
+  "/Package Fire Tube Steam Boiler/1.jpeg.jpg",
+  "/Waste Heat Steam Boiler/1.jpeg.jpg",
+  "/Thermal Oil Heater/1.jpeg.jpg",
 ];
 
 const Products = () => {

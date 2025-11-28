@@ -242,6 +242,56 @@ const EngineeringServices = () => {
         </div>
       </section>
 
+      {/* Spare Parts Gallery Section */}
+      <section className="py-16 md:py-24 bg-white">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <span className="text-xs font-bold tracking-[0.2em] uppercase text-[#1f5a45] mb-4 block">
+              — SPARE PARTS CATALOG
+            </span>
+            <h2 className="text-3xl md:text-4xl font-bold text-[#123326] mb-4">
+              Industrial Boiler Components & Spare Parts
+            </h2>
+            <div className="h-1 w-20 bg-[#b8892e] mx-auto rounded-full mb-6" />
+            <p className="text-base text-muted-foreground max-w-3xl mx-auto">
+              Genuine and high-quality spare parts for all types of industrial boilers, thermal oil heaters, chain grates, and biomass fuel systems.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
+            {Array.from({ length: 32 }, (_, i) => i + 1).map((num) => (
+              <div
+                key={num}
+                className="group relative rounded-lg overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1 bg-white border border-[#e1e6e2]"
+              >
+                <div className="relative h-32 overflow-hidden bg-[#f5f7f6]">
+                  <img
+                    src={`/Spare Parts/${num}.jpeg.jpg`}
+                    alt={`Spare Part ${num}`}
+                    loading="lazy"
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#123326]/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+                </div>
+                <div className="p-2 text-center">
+                  <p className="text-xs font-medium text-[#123326]">Part #{num}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div className="text-center mt-12">
+            <Button
+              onClick={() => navigate("/contact")}
+              className="bg-[#1f5a45] hover:bg-[#184635] text-white shadow-md hover:shadow-lg transition-all duration-300 group"
+            >
+              Request Parts Catalog
+              <ArrowRight className="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1" />
+            </Button>
+          </div>
+        </div>
+      </section>
+
       {/* CTA Section - Gold Band Style */}
       <section className="relative overflow-hidden bg-gradient-to-r from-[#b8892e] via-[#c9a04a] to-[#b8892e]" aria-label="Call to action">
         <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZGVmcz48cGF0dGVybiBpZD0iZ3JpZCIgd2lkdGg9IjQwIiBoZWlnaHQ9IjQwIiBwYXR0ZXJuVW5pdHM9InVzZXJTcGFjZU9uVXNlIj48cGF0aCBkPSJNIDQwIDAgTCAwIDAgMCA0MCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSJ3aGl0ZSIgc3Ryb2tlLW9wYWNpdHk9IjAuMDUiIHN0cm9rZS13aWR0aD0iMSIvPjwvcGF0dGVybj48L2RlZnM+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNncmlkKSIvPjwvc3ZnPg==')] opacity-40" />

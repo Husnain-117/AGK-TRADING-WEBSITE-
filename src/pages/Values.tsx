@@ -224,6 +224,83 @@ const Values = () => {
         </div>
       </section>
 
+      {/* Projects Portfolio Section */}
+      <section className="py-16 md:py-24 bg-gradient-to-b from-[#faf8f3] to-white">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <span className="text-xs font-bold tracking-[0.2em] uppercase text-[#1f5a45] mb-4 block">
+              — OUR PORTFOLIO
+            </span>
+            <h2 className="text-3xl md:text-4xl font-bold text-[#123326] mb-4">
+              Completed Projects & Installations
+            </h2>
+            <div className="h-1 w-20 bg-[#b8892e] mx-auto rounded-full mb-6" />
+            <p className="text-base text-muted-foreground max-w-3xl mx-auto">
+              Proudly serving leading industrial clients across Pakistan with premium boiler installations, thermal systems, and engineering solutions.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+            {[
+              { name: "Ghani Ghee Mills", img: "/Projects/Ghani Ghee-2017.jpeg.jpg" },
+              { name: "Hi-Tech Oil Mills", img: "/Projects/Hi-Tech Oil.jpeg.jpg" },
+              { name: "Kashmir Oil Mills", img: "/Projects/Kashmir Oil 01.jpeg.jpg" },
+              { name: "Kashmir Oil Phase 2", img: "/Projects/Kashmir Oil 02.jpeg.jpg" },
+              { name: "Kashmir Oil Phase 3", img: "/Projects/Kashmir Oil 03.jpeg.jpg" },
+              { name: "M.K Sons Industries", img: "/Projects/M.K Sons.jpeg.jpg" },
+              { name: "Manoo Textile Mills", img: "/Projects/Manoo Textile.jpeg.jpg" },
+              { name: "Muslim Textile Mills", img: "/Projects/Muslim Textile.jpeg.jpg" },
+              { name: "Nishat Apparel", img: "/Projects/Nishat Apparel.jpeg.jpg" },
+              { name: "Nishat Bath Division", img: "/Projects/Nishat Bath.jpeg.jpg" },
+              { name: "Nishat Dairy", img: "/Projects/Nishat Dairy.jpeg.jpg" },
+              { name: "Nubahar Unit 1", img: "/Projects/Nubahar Unit #01.jpeg.jpg" },
+              { name: "Nubahar Unit 2", img: "/Projects/Nubahar Unit #02.jpeg.jpg" },
+              { name: "Pepsi Haidri", img: "/Projects/Pepsi Haidri.jpeg.jpg" },
+              { name: "Punjab Oil Mills", img: "/Projects/Punjab Oil.jpeg.jpg" },
+              { name: "Punjab Rice Mills", img: "/Projects/Punjab Rice.jpeg.jpg" },
+              { name: "Ravi Rice Mills Phase 1", img: "/Projects/Ravi Rice 01.jpeg.jpg" },
+              { name: "Ravi Rice Mills Phase 2", img: "/Projects/Ravi Rice 02.jpeg.jpg" },
+              { name: "Ravi Rice Mills Phase 3", img: "/Projects/Ravi Rice 03.jpeg.jpg" },
+              { name: "Rose Paper Mills", img: "/Projects/Rose Paper.jpeg.jpg" },
+              { name: "Royal Feed Industries", img: "/Projects/Royal Feed.jpeg.jpg" },
+              { name: "Sadiq Ghee Mills", img: "/Projects/Sadiq Ghee.jpeg.jpg" },
+              { name: "Salva Ghee Industries", img: "/Projects/Salva Ghee.jpeg.jpg" },
+              { name: "Shabbair Paper Mills", img: "/Projects/Shabbair Paper.jpeg.jpg" },
+              { name: "Shahkam Industries Phase 1", img: "/Projects/Shahkam 01.jpeg.jpg" },
+              { name: "Shahkam Industries Phase 2", img: "/Projects/Shahkam 02.jpeg.jpg" },
+            ].map((project, idx) => (
+              <div
+                key={idx}
+                className="group relative rounded-xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 bg-white border-2 border-[#e1e6e2]"
+              >
+                <div className="relative h-56 overflow-hidden bg-[#f5f7f6]">
+                  <img
+                    src={project.img}
+                    alt={project.name}
+                    loading="lazy"
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#123326]/80 via-[#123326]/20 to-transparent" />
+                  <div className="absolute top-3 right-3">
+                    <span className="inline-block px-2.5 py-1 rounded-full bg-[#b8892e] text-white text-xs font-semibold">
+                      ✓ Completed
+                    </span>
+                  </div>
+                </div>
+                <div className="p-4">
+                  <h3 className="text-sm font-semibold text-[#123326] group-hover:text-[#1f5a45] transition-colors">
+                    {project.name}
+                  </h3>
+                  <p className="text-xs text-muted-foreground mt-1">
+                    Boiler Installation & Engineering
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Why Choose Us Section */}
       <section className="py-16 md:py-20 bg-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">

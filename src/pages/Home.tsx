@@ -146,47 +146,41 @@ const Home = () => {
       title: "Advanced Manufacturing",
       description:
         "Steam Boilers, Waste Heat Boilers, Thermal Oil Heaters & Pressure Vessels / Storage Tanks.",
-      image:
-        "https://images.unsplash.com/photo-1627807452369-a2cd0b5ca56f?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      image: "/Package Fire Tube Steam Boiler/2.jpeg.jpg",
       link: "/products",
     },
     {
       title: "Fuel Conversion Engineering",
       description:
         "Conversion systems for Solid Fuels (Coal, Biomass) and Liquid Fuels for boilers and heaters.",
-      image:
-        "https://images.unsplash.com/photo-1647427060118-4911c9821b82?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      image: "/Water Tube Steam Boiler/2.jpeg.jpg",
       link: "/services?cat=fuel-conversion",
     },
     {
       title: "Waste Recovery System",
       description:
         "Waste heat boilers, heat recovery economizers, air pre-heaters and heat exchangers.",
-      image:
-        "https://images.unsplash.com/photo-1664087783968-0cd7deee8390?q=80&w=1222&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      image: "/Waste Heat Steam Boiler/2.jpeg.jpg",
       link: "/products?type=waste-heat-steam-boiler",
     },
     {
       title: "Overhauling Services",
       description:
         "Complete overhauling services for boilers and thermal oil heaters.",
-      image:
-        "https://images.unsplash.com/photo-1513828583688-c52646db42da?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      image: "/Thermal Oil Heater/4.jpeg.jpg",
       link: "/services?cat=after-sales",
     },
     {
       title: "Engineering Services",
       description:
         "Spare parts for industrial boilers, oil heaters, chain grate and biomass fuel systems, supplied to your exact specifications.",
-      image:
-        "https://images.unsplash.com/photo-1653256322037-321089b8db61?q=80&w=1203&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      image: "/Spare Parts/5.jpeg.jpg",
       link: "/services/engineering",
     },
     {
       title: "After Sales Support",
       description: "Commissioning, maintenance, and technical support by expert engineers.",
-      image:
-        "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      image: "/Gas & Oil Steam Boiler/4.jpeg.jpg",
       link: "/services?cat=after-sales",
     },
   ];

@@ -21,15 +21,57 @@ type ProductDetailData = {
   oilHeaterTypes?: string[];
 };
 
-// Shared product images from Home page - used across all products
-const productImages = [
-  "https://images.unsplash.com/photo-1581090464777-f3220bbe1b8b?q=80&w=800&auto=format&fit=crop",
-  "https://images.unsplash.com/photo-1627807452369-a2cd0b5ca56f?q=80&w=800&auto=format&fit=crop",
-  "https://images.unsplash.com/photo-1647427060118-4911c9821b82?q=80&w=800&auto=format&fit=crop",
-  "https://images.unsplash.com/photo-1664087783968-0cd7deee8390?q=80&w=800&auto=format&fit=crop",
-  "https://images.unsplash.com/photo-1513828583688-c52646db42da?q=80&w=800&auto=format&fit=crop",
-  "https://images.unsplash.com/photo-1653256322037-321089b8db61?q=80&w=800&auto=format&fit=crop",
-  "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=800&auto=format&fit=crop",
+// Real product images organized by category
+const gasOilBoilerImages = [
+  "/Gas & Oil Steam Boiler/1.jpeg.jpg",
+  "/Gas & Oil Steam Boiler/2.jpeg.jpg",
+  "/Gas & Oil Steam Boiler/3.jpeg.jpg",
+  "/Gas & Oil Steam Boiler/4.jpeg.jpg",
+  "/Gas & Oil Steam Boiler/5.jpeg.jpg",
+  "/Gas & Oil Steam Boiler/6.jpeg.jpg",
+];
+
+const waterTubeBoilerImages = [
+  "/Water Tube Steam Boiler/1.jpeg.jpg",
+  "/Water Tube Steam Boiler/2.jpeg.jpg",
+  "/Water Tube Steam Boiler/3.jpeg.jpg",
+  "/Water Tube Steam Boiler/4.jpeg.jpg",
+  "/Water Tube Steam Boiler/5.jpeg.jpg",
+  "/Water Tube Steam Boiler/6.jpeg.jpg",
+  "/Water Tube Steam Boiler/7.jpeg.jpg",
+  "/Water Tube Steam Boiler/8.jpeg.jpg",
+];
+
+const packageFireTubeImages = [
+  "/Package Fire Tube Steam Boiler/1.jpeg.jpg",
+  "/Package Fire Tube Steam Boiler/2.jpeg.jpg",
+  "/Package Fire Tube Steam Boiler/3.jpeg.jpg",
+  "/Package Fire Tube Steam Boiler/4.jpeg.jpg",
+  "/Package Fire Tube Steam Boiler/5.jpeg.jpg",
+  "/Package Fire Tube Steam Boiler/6.jpeg.jpg",
+  "/Package Fire Tube Steam Boiler/7.jpeg.jpg",
+  "/Package Fire Tube Steam Boiler/8.jpeg.jpg",
+];
+
+const wasteHeatBoilerImages = [
+  "/Waste Heat Steam Boiler/1.jpeg.jpg",
+  "/Waste Heat Steam Boiler/2.jpeg.jpg",
+  "/Waste Heat Steam Boiler/3.jpeg.jpg",
+  "/Waste Heat Steam Boiler/4.jpeg.jpg",
+  "/Waste Heat Steam Boiler/5.jpeg.jpg",
+];
+
+const thermalOilHeaterImages = [
+  "/Thermal Oil Heater/1.jpeg.jpg",
+  "/Thermal Oil Heater/2.jpeg.jpg",
+  "/Thermal Oil Heater/3.jpeg.jpg",
+  "/Thermal Oil Heater/4.jpeg.jpg",
+  "/Thermal Oil Heater/5.jpeg.jpg",
+  "/Thermal Oil Heater/6.jpeg.jpg",
+  "/Thermal Oil Heater/7.jpeg.jpg",
+  "/Thermal Oil Heater/8.jpeg.jpg",
+  "/Thermal Oil Heater/9.jpeg.jpg",
+  "/Thermal Oil Heater/10.jpeg.jpg",
 ];
 
 // Product database with full details
@@ -37,7 +79,7 @@ const productDatabase: Record<string, ProductDetailData> = {
   "gas-oil-fired-boilers": {
     name: "Gas & Oil Package Type & Water Tube Steam Boilers",
     slug: "gas-oil-fired-boilers",
-    heroImage: "https://images.unsplash.com/photo-1581091226825-a6a3a1a1bb73?q=80&w=1200&auto=format&fit=crop",
+    heroImage: "/Gas & Oil Steam Boiler/3.jpeg.jpg",
     description:
       "AGK offering high-quality package type and water tube steam boilers designed for faster steam production, high heat transfer efficiency, and long-term industrial reliability. Package boilers utilize a compact, internally fired shell-type furnace that delivers high heat release rates and quick evaporation, while water tube boilers provide superior performance through water circulation inside tubes and flue gases passing over them, ensuring higher pressure capability, rapid load response, and improved thermal efficiency. Both boiler designs offer excellent fuel economy, compact engineering space requirements, and easy, inexpensive maintenance, making them suitable for a wide range of industrial steam applications.",
     boilerTypes: [
@@ -58,12 +100,12 @@ const productDatabase: Record<string, ProductDetailData> = {
     ],
     conclusion:
       "AGK gas and oil-fired boilers are engineered to ensure maximum fuel efficiency, reduced operating costs, and reliable steam output, making them the ideal choice for industries that prioritize performance, energy savings, and long-term operational reliability.",
-    images: productImages
+    images: gasOilBoilerImages
   },
   "water-tube-boilers": {
     name: "Water Tube Boilers",
     slug: "water-tube-boilers",
-    heroImage: "https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=1200&auto=format&fit=crop",
+    heroImage: "/Water Tube Steam Boiler/1.jpeg.jpg",
     description:
       "AGK Water Tube Boilers combine advanced thermal engineering with high-efficiency fuel combustion to deliver powerful performance for heavy industrial applications. Designed with a large radiant furnace, optimized water circulation, and low-velocity flue gas flow, these boilers ensure rapid steam generation and exceptional heat transfer. The use of wear-resistant water walls and advanced abrasion-proof tube technology significantly reduces erosion, extending boiler lifespan even under harsh operating conditions. Engineered to operate seamlessly on Pakistani coal, imported coal, and all major biomass fuels—including wood chips, rice husk, bagasse, and pellets—these boilers deliver consistent high combustion efficiency with reduced emissions. Their stable 24/7 operation, high steam purity, and strong load-handling capability make them ideal for textile, chemical, refinery, pharmaceutical, paper & board, and other high-pressure industrial sectors seeking reliability, efficiency, and long-term fuel savings.",
     boilerTypes: ["Water Tube (Double Drum)", "Water Tube (Single Drum)"],
@@ -99,12 +141,12 @@ const productDatabase: Record<string, ProductDetailData> = {
     ],
     conclusion:
       "AGK water tube boilers are engineered to provide maximum fuel utilization, lower operating costs, and dependable steam, making them an ideal choice for industries focused on performance and efficiency.",
-    images: productImages
+    images: waterTubeBoilerImages
   },
   "package-type-fire-tube-boilers": {
     name: "Package Type Fire Tube Boilers",
     slug: "package-type-fire-tube-boilers",
-    heroImage: "https://images.unsplash.com/photo-1581094794329-c8112a89af12?q=80&w=1200&auto=format&fit=crop",
+    heroImage: "/Package Fire Tube Steam Boiler/1.jpeg.jpg",
     description:
       "AGK Fire Tube Boilers are engineered to provide a perfect balance of durability, ease of operation, and economical steam production. Built with a robust shell-and-tube design, these boilers ensure uniform heating and steady steam output while keeping maintenance simple and cost-efficient. The fire-tube configuration maximizes heat retention, resulting in improved thermal efficiency and reduced fuel consumption. Designed for multi-fuel flexibility, these boilers perform efficiently on coal and biomass fuels such as wood logs, wood chips, pellets, rice husk, and bagasse. Their strong construction, stable combustion system, and user-friendly operation make them a preferred choice for textile, food processing, dyeing, beverage, feed mills, and paper industries. With reliable operation, fast steam response, and low operating costs, AGK Fire Tube Boilers offer an ideal solution for medium-pressure industrial steam requirements.",
     boilerTypes: ["Package Type Fire Tube Three Pass"],
@@ -140,12 +182,12 @@ const productDatabase: Record<string, ProductDetailData> = {
     ],
     conclusion:
       "AGK fire tube boilers deliver reliable steam, lower operating costs, and uninterrupted performance, making them a trusted choice for diverse industrial applications.",
-    images: productImages
+    images: packageFireTubeImages
   },
   "waste-heat-recovery-boilers": {
     name: "Waste Heat Recovery Steam Boilers",
     slug: "waste-heat-recovery-boilers",
-    heroImage: "https://images.unsplash.com/photo-1518709268805-4e9042af2176?q=80&w=1200&auto=format&fit=crop",
+    heroImage: "/Waste Heat Steam Boiler/1.jpeg.jpg",
     description:
       "AGK offers complete solutions for Waste Heat Recovery Boilers, Waste Heat Recovery Boiler is a system which recovers various kinds of waste heat generated from the different Processes, and convert such recovered heat into useful and effective thermal energy/Steam. Waste Heat Recovery Boiler is contributing to industrial society in terms of improvement of thermal efficiency, energy saving, environmental protection etc. The waste heat recovery process will add to the efficiency of the process, the efficiency is increased and thus the costs of fuel and energy consumption needed for that process is decreased. On the other hand, air pollution will dramatically decrease because less flue gases of high temperature are emitted from the plant to the atmosphere. AGK Provided Waste Heat Recovery Boilers (WHRB) are fully packaged industrial boilers equipped with advanced instrumentation to deliver maximum possible heat recovery.",
     boilerTypes: ["Smoke Tube Steam Boiler", "Water Tube Steam Boiler"],
@@ -167,12 +209,12 @@ const productDatabase: Record<string, ProductDetailData> = {
     ],
     conclusion:
       "AGK Waste Heat Recovery Boilers deliver maximum energy savings, enhanced plant efficiency, and long-term operational reliability, making them a smart choice for industries aiming for sustainable growth.",
-    images: productImages
+    images: wasteHeatBoilerImages
   },
   "thermal-oil-heater": {
     name: "Thermal Oil Heater",
     slug: "thermal-oil-heater",
-    heroImage: "https://images.unsplash.com/photo-1555949963-aa79dcee981c?q=80&w=1200&auto=format&fit=crop",
+    heroImage: "/Thermal Oil Heater/6.jpeg.jpg",
     description:
       "AGK highly efficient Thermal Oil Heater is the heat carrier with heat conduction oil, the circulating pump force heat transfer medium circulating in liquid phase, and transfer heat to heat user equipment, then return to the heating furnace for reheating. It is safe and low energy consumption boiler with working characteristics of low pressure (1.0 MPa) and high temperature (350℃). The boiler medium is working under liquid state, so it is safe and reliable. Thermal oil boiler is opted instead of steam boiler for industrial production, to improve productivity. AGK provided thermal oil boilers are widely used for textile printing and dyeing industry, petroleum chemical industry, Oleochemical industry, Synthetic fiber industry, plastic and rubber industry etc.",
     oilHeaterTypes: ["Horizontal Oil Heaters", "Vertical Oil Heaters", "Oil & Gas Fired Type"],
@@ -196,7 +238,7 @@ const productDatabase: Record<string, ProductDetailData> = {
     ],
     conclusion:
       "AGK Thermal Oil Heaters provide energy savings, process optimization, and reliable heating solutions, making them an ideal choice for industries seeking efficiency, safety, and sustainability.",
-    images: productImages
+    images: thermalOilHeaterImages
   }
 };
 
@@ -440,9 +482,6 @@ const ProductDetail = () => {
                   </div>
                 ))}
               </div>
-              <p className="text-sm text-muted-foreground italic text-center">
-                * Placeholder images - Replace with actual product photos
-              </p>
             </div>
 
             {/* Conclusion */}

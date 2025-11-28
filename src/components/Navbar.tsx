@@ -62,12 +62,49 @@ const Navbar = () => {
                 </NavigationMenuItem>
 
                 <NavigationMenuItem>
-                  <Link
-                    to="/products"
-                    className="px-3 py-2 text-sm font-semibold text-gray-900 rounded-md border-b-2 border-transparent hover:text-[#1f5a45] hover:border-[#b8892e] hover:bg-[#1f5a45]/5 transition-colors"
-                  >
+                  <NavigationMenuTrigger className="px-3 py-2 text-sm font-semibold text-gray-900 bg-transparent border-b-2 border-transparent hover:text-[#1f5a45] hover:border-[#b8892e] hover:bg-[#1f5a45]/5 transition-colors data-[state=open]:text-[#1f5a45] data-[state=open]:border-[#b8892e] data-[state=open]:bg-[#b8892e]/10">
                     Products
-                  </Link>
+                  </NavigationMenuTrigger>
+                  <NavigationMenuContent>
+                    <div className="grid gap-1 p-2 w-[280px]">
+                      <Link
+                        to="/products"
+                        className="px-3 py-2 rounded-md text-sm font-medium text-gray-800 hover:text-[#1f5a45] hover:bg-[#1f5a45]/5 transition-colors font-semibold"
+                      >
+                        All Products
+                      </Link>
+                      <Link
+                        to="/products/gas-oil-fired-boilers"
+                        className="px-3 py-2 rounded-md text-sm font-medium text-gray-800 hover:text-[#1f5a45] hover:bg-[#1f5a45]/5 transition-colors"
+                      >
+                        Gas & Oil Fired Boilers
+                      </Link>
+                      <Link
+                        to="/products/water-tube-boilers"
+                        className="px-3 py-2 rounded-md text-sm font-medium text-gray-800 hover:text-[#1f5a45] hover:bg-[#1f5a45]/5 transition-colors"
+                      >
+                        Water Tube Boilers
+                      </Link>
+                      <Link
+                        to="/products/package-type-fire-tube-boilers"
+                        className="px-3 py-2 rounded-md text-sm font-medium text-gray-800 hover:text-[#1f5a45] hover:bg-[#1f5a45]/5 transition-colors"
+                      >
+                        Package Fire Tube Boilers
+                      </Link>
+                      <Link
+                        to="/products/waste-heat-recovery-boilers"
+                        className="px-3 py-2 rounded-md text-sm font-medium text-gray-800 hover:text-[#1f5a45] hover:bg-[#1f5a45]/5 transition-colors"
+                      >
+                        Waste Heat Recovery Boilers
+                      </Link>
+                      <Link
+                        to="/products/thermal-oil-heater"
+                        className="px-3 py-2 rounded-md text-sm font-medium text-gray-800 hover:text-[#1f5a45] hover:bg-[#1f5a45]/5 transition-colors"
+                      >
+                        Thermal Oil Heater
+                      </Link>
+                    </div>
+                  </NavigationMenuContent>
                 </NavigationMenuItem>
 
                 <NavigationMenuItem>
@@ -161,13 +198,53 @@ const Navbar = () => {
                   </Link>
                 </div>
               </details>
-              <Link
-                to="/products"
-                className="py-2 font-medium hover:text-[#1f5a45] transition-colors"
-                onClick={() => setIsOpen(false)}
-              >
-                Products
-              </Link>
+              <details>
+                <summary className="py-2 font-medium cursor-pointer hover:text-[#1f5a45] transition-colors">Products</summary>
+                <div className="pl-3 pb-2 flex flex-col">
+                  <Link
+                    to="/products"
+                    className="py-1 text-sm hover:text-[#1f5a45] transition-colors font-semibold"
+                    onClick={() => setIsOpen(false)}
+                  >
+                    All Products
+                  </Link>
+                  <Link
+                    to="/products/gas-oil-fired-boilers"
+                    className="py-1 text-sm hover:text-[#1f5a45] transition-colors"
+                    onClick={() => setIsOpen(false)}
+                  >
+                    Gas & Oil Fired Boilers
+                  </Link>
+                  <Link
+                    to="/products/water-tube-boilers"
+                    className="py-1 text-sm hover:text-[#1f5a45] transition-colors"
+                    onClick={() => setIsOpen(false)}
+                  >
+                    Water Tube Boilers
+                  </Link>
+                  <Link
+                    to="/products/package-type-fire-tube-boilers"
+                    className="py-1 text-sm hover:text-[#1f5a45] transition-colors"
+                    onClick={() => setIsOpen(false)}
+                  >
+                    Package Fire Tube Boilers
+                  </Link>
+                  <Link
+                    to="/products/waste-heat-recovery-boilers"
+                    className="py-1 text-sm hover:text-[#1f5a45] transition-colors"
+                    onClick={() => setIsOpen(false)}
+                  >
+                    Waste Heat Recovery Boilers
+                  </Link>
+                  <Link
+                    to="/products/thermal-oil-heater"
+                    className="py-1 text-sm hover:text-[#1f5a45] transition-colors"
+                    onClick={() => setIsOpen(false)}
+                  >
+                    Thermal Oil Heater
+                  </Link>
+                </div>
+              </details>
               <details>
                 <summary className="py-2 font-medium cursor-pointer hover:text-[#1f5a45] transition-colors">Services</summary>
                 <div className="pl-3 pb-2 flex flex-col">
