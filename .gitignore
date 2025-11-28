@@ -22,3 +22,22 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# TypeScript build info
+*.tsbuildinfo
+
+# Env files (local secrets, API keys, etc.)
+.env
+.env.*
+
+# Testing / coverage
+coverage
+.nyc_output
+
+# Vite / tooling caches
+.vite
+.vitest
+.eslintcache
+
+# OS-specific
+Thumbs.db

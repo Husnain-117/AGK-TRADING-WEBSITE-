@@ -17,10 +17,12 @@ All colors MUST be HSL.
     --popover: 0 0% 100%;
     --popover-foreground: 215 25% 15%;
 
-    --primary: 211 100% 40%;
+    /* Brand primary: deep green from logo */
+    --primary: 153 40% 25%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 180 100% 33%;
+    /* Brand secondary: gold from logo */
+    --secondary: 43 45% 50%;
     --secondary-foreground: 0 0% 100%;
 
     --accent: 16 100% 60%;
@@ -37,11 +39,11 @@ All colors MUST be HSL.
 
     --border: 214 32% 91%;
     --input: 214 32% 91%;
-    --ring: 211 100% 40%;
+    --ring: var(--primary);
 
     --radius: 0.5rem;
 
-    --gradient-hero: linear-gradient(135deg, hsl(211 100% 40%), hsl(180 100% 33%));
+    --gradient-hero: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--secondary)));
     --gradient-subtle: linear-gradient(180deg, hsl(0 0% 100%), hsl(214 32% 96%));
     --shadow-elegant: 0 10px 40px -10px hsl(211 100% 40% / 0.2);
     --shadow-card: 0 4px 20px -4px hsl(215 25% 15% / 0.1);

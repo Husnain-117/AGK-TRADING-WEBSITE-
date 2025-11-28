@@ -3,6 +3,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Calendar, User, Clock } from "lucide-react";
+import aboutTeam from "@/assets/about-team.jpg";
 
 const Blog = () => {
   const featuredPost = {
@@ -67,45 +68,60 @@ const Blog = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="relative py-20 bg-gradient-to-br from-primary/10 to-secondary/10">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center animate-fade-in">
-            <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4">Blog & Resources</h1>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Industry insights, best practices, and thought leadership from our experts
-            </p>
-          </div>
+      <section className="relative min-h-[50vh] flex items-center justify-center overflow-hidden">
+        <div className="absolute inset-0 z-0" aria-hidden="true">
+          <img
+            src={aboutTeam}
+            alt="AGK Blog & Insights"
+            className="w-full h-full object-cover"
+            loading="eager"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#123326]/90 via-[#1f5a45]/80 to-[#0b1f17]/90" />
+        </div>
+        <div className="relative z-10 text-center text-white max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <p className="text-xs font-semibold tracking-[0.3em] uppercase text-[#fdf5e6] mb-4">
+            Industry Insights & Updates
+          </p>
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
+            Blog & Resources
+          </h1>
+          <p className="text-base md:text-lg text-white/90 max-w-2xl mx-auto leading-relaxed">
+            Thought leadership, best practices, and practical guidance from the AGK team to help you run safer, more efficient plants.
+          </p>
         </div>
       </section>
 
       {/* Featured Post */}
-      <section className="py-16">
+      <section className="py-16 bg-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <Card className="overflow-hidden hover:shadow-hover transition-all duration-300 border-border">
+          <Card className="overflow-hidden rounded-2xl border-2 border-[#e1e6e2] shadow-lg hover:shadow-2xl transition-all duration-300 bg-white">
             <div className="grid lg:grid-cols-2 gap-0">
-              <div className="relative h-64 lg:h-auto bg-muted">
-                <img 
-                  src={featuredPost.image} 
+              <div className="relative h-64 lg:h-auto bg-[#f5f7f6]">
+                <img
+                  src={featuredPost.image}
                   alt={featuredPost.title}
                   className="w-full h-full object-cover"
+                  loading="lazy"
+                  decoding="async"
                 />
-                <Badge className="absolute top-4 left-4 bg-secondary text-secondary-foreground">
+                <div className="absolute inset-0 bg-gradient-to-t from-[#123326]/60 via-transparent to-transparent" />
+                <Badge className="absolute top-4 left-4 bg-[#b8892e] text-white font-semibold px-3 py-1 rounded-full">
                   Featured
                 </Badge>
               </div>
-              <CardContent className="p-8 flex flex-col justify-center">
-                <Badge className="w-fit mb-4 bg-accent/10 text-accent hover:bg-accent/20">
+              <CardContent className="p-8 lg:p-10 flex flex-col justify-center bg-white">
+                <Badge className="w-fit mb-4 bg-[#1f5a45]/10 text-[#1f5a45] font-semibold tracking-wide uppercase">
                   {featuredPost.category}
                 </Badge>
-                <h2 className="text-3xl font-bold text-foreground mb-4">
+                <h2 className="text-3xl md:text-4xl font-bold text-[#123326] mb-4">
                   {featuredPost.title}
                 </h2>
-                <p className="text-muted-foreground mb-6">
+                <p className="text-muted-foreground mb-6 leading-relaxed">
                   {featuredPost.excerpt}
                 </p>
-                <div className="flex items-center gap-4 text-sm text-muted-foreground mb-6">
+                <div className="flex flex-wrap items-center gap-4 text-sm text-muted-foreground mb-6">
                   <span className="flex items-center gap-1">
                     <User size={16} />
                     {featuredPost.author}
@@ -119,8 +135,8 @@ const Blog = () => {
                     {featuredPost.readTime}
                   </span>
                 </div>
-                <Button variant="secondary" size="lg" className="w-fit">
-                  Read More →
+                <Button size="lg" className="w-fit bg-[#1f5a45] hover:bg-[#184635] text-white shadow-md px-6">
+                  Read More
                 </Button>
               </CardContent>
             </div>
@@ -129,29 +145,35 @@ const Blog = () => {
       </section>
 
       {/* Blog Posts Grid */}
-      <section className="py-16 bg-muted/50">
+      <section className="py-16 bg-gradient-to-b from-[#f5f7f6] to-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+            <span className="text-xs font-bold tracking-[0.2em] uppercase text-[#1f5a45] mb-2 block">
               Latest Articles
+            </span>
+            <h2 className="text-3xl md:text-4xl font-bold text-[#123326]">
+              Insights from Our Experts
             </h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {blogPosts.map((post, index) => (
-              <Card key={index} className="group hover:shadow-hover transition-all duration-300 hover:-translate-y-2 border-border bg-card overflow-hidden h-full flex flex-col">
-                <div className="relative h-48 bg-gradient-to-br from-primary/20 to-secondary/20">
-                  <Badge className="absolute top-3 left-3 bg-accent/10 text-accent">
+              <Card
+                key={index}
+                className="group bg-white rounded-2xl border-2 border-[#e1e6e2] shadow-sm hover:shadow-xl hover:border-[#1f5a45]/40 transition-all duration-300 hover:-translate-y-1 overflow-hidden flex flex-col h-full"
+              >
+                <div className="relative h-48 bg-gradient-to-br from-[#1f5a45]/10 to-[#b8892e]/15">
+                  <Badge className="absolute top-3 left-3 bg-white/90 text-[#1f5a45] border border-[#1f5a45]/20 font-semibold">
                     {post.category}
                   </Badge>
                 </div>
                 <CardContent className="p-6 flex flex-col flex-grow">
-                  <h3 className="text-xl font-semibold text-foreground mb-3 group-hover:text-primary transition-colors">
+                  <h3 className="text-xl font-bold text-[#123326] mb-3 group-hover:text-[#1f5a45] transition-colors">
                     {post.title}
                   </h3>
-                  <p className="text-muted-foreground mb-4 flex-grow">
+                  <p className="text-muted-foreground mb-4 flex-grow leading-relaxed">
                     {post.excerpt}
                   </p>
-                  <div className="flex items-center gap-3 text-sm text-muted-foreground mb-4">
+                  <div className="flex items-center gap-3 text-sm text-muted-foreground mb-3">
                     <span className="flex items-center gap-1">
                       <User size={14} />
                       {post.author}
@@ -164,7 +186,10 @@ const Blog = () => {
                   <div className="text-sm text-muted-foreground mb-4">
                     {post.date}
                   </div>
-                  <Button variant="link" className="p-0 h-auto justify-start text-secondary">
+                  <Button
+                    variant="link"
+                    className="p-0 h-auto justify-start text-[#b8892e] hover:text-[#a57926] font-semibold"
+                  >
                     Read More →
                   </Button>
                 </CardContent>
@@ -177,19 +202,26 @@ const Blog = () => {
       {/* Newsletter Section */}
       <section className="py-16">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <Card className="bg-gradient-to-br from-primary to-secondary text-white border-0">
-            <CardContent className="p-12 text-center">
-              <h2 className="text-3xl font-bold mb-4">Stay Updated</h2>
-              <p className="text-xl mb-8 opacity-90 max-w-2xl mx-auto">
-                Subscribe to our newsletter for the latest industry insights, trends, and updates
+          <Card className="relative overflow-hidden bg-gradient-to-r from-[#1f5a45] via-[#2d7a5e] to-[#1f5a45] text-white border-0 rounded-2xl shadow-xl">
+            <div className="absolute inset-0 opacity-20 pointer-events-none" aria-hidden="true">
+              <div className="absolute -right-10 -top-10 w-48 h-48 rounded-full border-2 border-white/40" />
+              <div className="absolute right-10 bottom-0 w-32 h-32 bg-[#b8892e]/40 rounded-full blur-xl" />
+            </div>
+            <CardContent className="relative p-10 md:p-12 text-center">
+              <h2 className="text-3xl md:text-4xl font-bold mb-4">Stay Updated</h2>
+              <p className="text-lg md:text-xl mb-8 text-white/90 max-w-2xl mx-auto">
+                Subscribe for the latest boiler room insights, efficiency tips, and project highlights from AGK.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
                 <input
                   type="email"
                   placeholder="Enter your email"
-                  className="flex-1 px-4 py-3 rounded-md text-foreground focus:outline-none focus:ring-2 focus:ring-accent"
+                  className="flex-1 px-4 py-3 rounded-md text-[#123326] focus:outline-none focus:ring-2 focus:ring-[#b8892e]"
                 />
-                <Button size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground">
+                <Button
+                  size="lg"
+                  className="bg-white text-[#1f5a45] hover:bg-white/90 font-semibold shadow-md px-6"
+                >
                   Subscribe
                 </Button>
               </div>

@@ -1,152 +1,216 @@
-import { useState } from "react";
-import ProductCard from "@/components/ProductCard";
-import { Input } from "@/components/ui/input";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { Search } from "lucide-react";
+import { Link } from "react-router-dom";
+import { Button } from "@/components/ui/button";
+import { ArrowRight, CheckCircle2 } from "lucide-react";
 import productsImage from "@/assets/products-showcase.jpg";
 
-const Products = () => {
-  const [searchTerm, setSearchTerm] = useState("");
-  const [selectedCategory, setSelectedCategory] = useState("all");
+// Shared product images from Home page
+const productImages = [
+  "https://images.unsplash.com/photo-1513828583688-c52646db42da?q=80&w=800&auto=format&fit=crop",
+  "https://images.unsplash.com/photo-1627807452369-a2cd0b5ca56f?q=80&w=800&auto=format&fit=crop",
+  "https://images.unsplash.com/photo-1647427060118-4911c9821b82?q=80&w=800&auto=format&fit=crop",
+  "https://images.unsplash.com/photo-1664087783968-0cd7deee8390?q=80&w=800&auto=format&fit=crop",
+  "https://images.unsplash.com/photo-1513828583688-c52646db42da?q=80&w=800&auto=format&fit=crop",
+];
 
+const Products = () => {
   const products = [
     {
-      name: "Precision CNC Component",
-      category: "Manufacturing",
-      description: "High-precision machined component for aerospace and automotive applications. Meets ISO 9001 standards.",
-      price: "$299",
-      image: productsImage
+      id: "gas-oil-boilers",
+      name: "Gas & Oil Fired Boilers",
+      slug: "gas-oil-fired-boilers",
+      shortDescription:
+        "High-efficiency package type and water tube steam boilers designed for faster steam production, superior heat transfer, and long-term industrial reliability.",
+      highlights: [
+        "Wet Back & Dry Back Fire Tube",
+        "A-Type, D-Type & O-Type Water Tube",
+        "Capacity: 03 TPH to 25 TPH",
+        "Multi-fuel capability"
+      ],
+      image: productImages[0]
     },
     {
-      name: "Industrial Automation System",
-      category: "Automation",
-      description: "Complete PLC-based automation solution with touchscreen HMI and remote monitoring capabilities.",
-      price: "$4,999",
-      image: productsImage
+      id: "water-tube-boilers",
+      name: "Water Tube Boilers",
+      slug: "water-tube-boilers",
+      shortDescription:
+        "Advanced thermal engineering with high-efficiency fuel combustion for heavy industrial applications. Engineered for Pakistani coal, imported coal, and all major biomass fuels.",
+      highlights: [
+        "Double Drum & Single Drum",
+        "Chain Grate & Fluidized Bed",
+        "Capacity: 10 TPH to 30 TPH",
+        "24/7 stable operation"
+      ],
+      image: productImages[1]
     },
     {
-      name: "Quality Control Sensor",
-      category: "Testing",
-      description: "Advanced laser-based measurement sensor with sub-micron accuracy for quality assurance.",
-      price: "$1,299",
-      image: productsImage
+      id: "package-fire-tube",
+      name: "Package Type Fire Tube Boilers",
+      slug: "package-type-fire-tube-boilers",
+      shortDescription:
+        "Perfect balance of durability, ease of operation, and economical steam production. Built with robust shell-and-tube design for uniform heating and steady steam output.",
+      highlights: [
+        "Three-Pass Fire Tube Design",
+        "Fixed Bed, Chain Grate & Fluidized Bed",
+        "Capacity: 03 TPH to 25 TPH",
+        "Coal & biomass compatible"
+      ],
+      image: productImages[2]
     },
     {
-      name: "Hydraulic Press System",
-      category: "Manufacturing",
-      description: "Heavy-duty hydraulic press with programmable force control and safety interlocks.",
-      price: "$12,999",
-      image: productsImage
+      id: "waste-heat-recovery",
+      name: "Waste Heat Recovery Steam Boilers",
+      slug: "waste-heat-recovery-boilers",
+      shortDescription:
+        "Complete solutions for waste heat recovery systems that convert waste heat from various processes into useful thermal energy and steam, dramatically improving efficiency.",
+      highlights: [
+        "Smoke Tube & Water Tube",
+        "Capacity: 05 TPH to 10 TPH",
+        "Reduced pollution & costs",
+        "Maintenance-free operation"
+      ],
+      image: productImages[3]
     },
     {
-      name: "Conveyor Belt Assembly",
-      category: "Logistics",
-      description: "Modular conveyor system with variable speed control and customizable configurations.",
-      price: "$3,499",
-      image: productsImage
-    },
-    {
-      name: "Robotic Welding Arm",
-      category: "Automation",
-      description: "6-axis industrial robot for precision welding applications with vision guidance system.",
-      price: "$24,999",
-      image: productsImage
-    },
-    {
-      name: "Material Testing Kit",
-      category: "Testing",
-      description: "Comprehensive material testing equipment including hardness testers and microscopes.",
-      price: "$2,799",
-      image: productsImage
-    },
-    {
-      name: "Industrial 3D Printer",
-      category: "Manufacturing",
-      description: "Large-format metal 3D printer for rapid prototyping and small-batch production.",
-      price: "$49,999",
-      image: productsImage
-    },
-    {
-      name: "Smart Inventory System",
-      category: "Logistics",
-      description: "RFID-based inventory tracking system with real-time data analytics and cloud integration.",
-      price: "$6,999",
-      image: productsImage
+      id: "thermal-oil-heater",
+      name: "Thermal Oil Heater",
+      slug: "thermal-oil-heater",
+      shortDescription:
+        "Highly efficient thermal oil heater with heat conduction oil circulation for safe, low-pressure (1.0 MPa) and high-temperature (350℃) operation across diverse industries.",
+      highlights: [
+        "Horizontal & Vertical Types",
+        "Capacity: 05 to 14 MKCAL",
+        "Multi-fuel capability",
+        "Fully automatic operation"
+      ],
+      image: productImages[4]
     }
   ];
-
-  const filteredProducts = products.filter(product => {
-    const matchesSearch = product.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                         product.description.toLowerCase().includes(searchTerm.toLowerCase());
-    const matchesCategory = selectedCategory === "all" || product.category === selectedCategory;
-    return matchesSearch && matchesCategory;
-  });
-
-  const categories = ["all", ...Array.from(new Set(products.map(p => p.category)))];
 
   return (
     <div className="min-h-screen bg-background">
       {/* Hero Section */}
-      <section className="relative py-20 bg-gradient-to-br from-primary/10 to-secondary/10">
+      <section className="relative min-h-[50vh] flex items-center justify-center overflow-hidden">
+        <div className="absolute inset-0 z-0" aria-hidden="true">
+          <img
+            src={productsImage}
+            alt="AGK industrial boilers"
+            className="w-full h-full object-cover"
+            loading="eager"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#123326]/90 via-[#1f5a45]/80 to-[#0b1f17]/90" />
+        </div>
+        <div className="relative z-10 text-center text-white max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <p className="text-xs font-semibold tracking-[0.3em] uppercase text-[#fdf5e6] mb-4">
+            Industrial Steam Solutions
+          </p>
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
+            Our Products
+          </h1>
+          <p className="text-base md:text-lg text-white/90 max-w-2xl mx-auto leading-relaxed">
+            High-efficiency boilers, thermal oil heaters, and waste heat recovery systems engineered for reliability, performance, and fuel economy.
+          </p>
+        </div>
+      </section>
+
+      {/* Products Section - Alternating Layout */}
+      <section className="py-16 md:py-24 bg-gradient-to-b from-white via-[#f5f7f6] to-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center animate-fade-in">
-            <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4">Our Products</h1>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Premium industrial products engineered for excellence and reliability
-            </p>
+          <div className="max-w-7xl mx-auto space-y-20">
+            {products.map((product, index) => (
+              <div
+                key={product.id}
+                className={`flex flex-col ${
+                  index % 2 === 0 ? "lg:flex-row" : "lg:flex-row-reverse"
+                } gap-8 lg:gap-12 items-center`}
+              >
+                {/* Image */}
+                <div className="w-full lg:w-1/2">
+                  <div className="relative group overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500">
+                    <img
+                      src={product.image}
+                      alt={product.name}
+                      loading="lazy"
+                      className="w-full h-80 lg:h-96 object-cover transition-transform duration-700 group-hover:scale-105"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#123326]/60 via-transparent to-transparent opacity-80 group-hover:opacity-90 transition-opacity" />
+                    <div className="absolute bottom-6 left-6 right-6">
+                      <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#1f5a45]/90 backdrop-blur-sm text-white text-xs font-semibold">
+                        <CheckCircle2 className="w-4 h-4" />
+                        AGK Certified
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Content */}
+                <div className="w-full lg:w-1/2 space-y-6">
+                  <div>
+                    <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-[#123326] mb-4">
+                      {product.name}
+                    </h2>
+                    <p className="text-sm md:text-base text-muted-foreground leading-relaxed">
+                      {product.shortDescription}
+                    </p>
+                  </div>
+
+                  <div className="space-y-3">
+                    <h3 className="text-sm font-semibold text-[#1f5a45] uppercase tracking-wide">
+                      Key Features
+                    </h3>
+                    <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                      {product.highlights.map((highlight, idx) => (
+                        <li key={idx} className="flex items-start gap-2 text-sm text-muted-foreground">
+                          <CheckCircle2 className="w-4 h-4 text-[#b8892e] flex-shrink-0 mt-0.5" />
+                          <span>{highlight}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  <div className="pt-4">
+                    <Button
+                      asChild
+                      className="bg-[#1f5a45] hover:bg-[#184635] text-white shadow-md hover:shadow-lg transition-all duration-300 group"
+                    >
+                      <Link to={`/products/${product.slug}`}>
+                        Read More
+                        <ArrowRight className="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1" />
+                      </Link>
+                    </Button>
+                  </div>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* Search & Filter */}
-      <section className="py-8 bg-muted/30 sticky top-16 z-40 backdrop-blur-sm">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col md:flex-row gap-4">
-            <div className="relative flex-1">
-              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground h-5 w-5" />
-              <Input
-                type="text"
-                placeholder="Search products..."
-                value={searchTerm}
-                onChange={(e) => setSearchTerm(e.target.value)}
-                className="pl-10"
-              />
+      {/* CTA Section - Gold Band Style */}
+      <section className="relative overflow-hidden bg-gradient-to-r from-[#b8892e] via-[#c9a04a] to-[#b8892e]" aria-label="Call to action">
+        <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZGVmcz48cGF0dGVybiBpZD0iZ3JpZCIgd2lkdGg9IjQwIiBoZWlnaHQ9IjQwIiBwYXR0ZXJuVW5pdHM9InVzZXJTcGFjZU9uVXNlIj48cGF0aCBkPSJNIDQwIDAgTCAwIDAgMCA0MCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSJ3aGl0ZSIgc3Ryb2tlLW9wYWNpdHk9IjAuMDUiIHN0cm9rZS13aWR0aD0iMSIvPjwvcGF0dGVybj48L2RlZnM+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNncmlkKSIvPjwvc3ZnPg==')] opacity-40" />
+        <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 py-8">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+            <div className="text-center md:text-left">
+              <p className="text-xs font-bold tracking-[0.2em] uppercase text-white/80 mb-2">
+                — NEED ANY HELP
+              </p>
+              <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white">
+                Need a Custom Solution?
+              </h2>
             </div>
-            <Select value={selectedCategory} onValueChange={setSelectedCategory}>
-              <SelectTrigger className="w-full md:w-[200px]">
-                <SelectValue placeholder="Category" />
-              </SelectTrigger>
-              <SelectContent>
-                {categories.map((cat) => (
-                  <SelectItem key={cat} value={cat}>
-                    {cat === "all" ? "All Categories" : cat}
-                  </SelectItem>
-                ))}
-              </SelectContent>
-            </Select>
+            <div className="flex-shrink-0">
+              <Button
+                asChild
+                size="lg"
+                className="bg-white text-[#b8892e] hover:bg-white/90 shadow-lg font-semibold px-8"
+              >
+                <Link to="/quote">
+                  Request a Quote
+                  <ArrowRight className="w-4 h-4 ml-2" />
+                </Link>
+              </Button>
+            </div>
           </div>
-        </div>
-      </section>
-
-      {/* Products Grid */}
-      <section className="py-16">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          {filteredProducts.length > 0 ? (
-            <>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                {filteredProducts.map((product, index) => (
-                  <ProductCard key={index} {...product} />
-                ))}
-              </div>
-              <div className="text-center mt-8 text-muted-foreground">
-                Showing {filteredProducts.length} of {products.length} products
-              </div>
-            </>
-          ) : (
-            <div className="text-center py-12">
-              <p className="text-xl text-muted-foreground">No products found matching your criteria.</p>
-            </div>
-          )}
         </div>
       </section>
     </div>

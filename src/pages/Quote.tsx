@@ -6,6 +6,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Card, CardContent } from "@/components/ui/card";
 import { Checkbox } from "@/components/ui/checkbox";
 import { ChevronRight, ChevronLeft } from "lucide-react";
+import aboutTeam from "@/assets/about-team.jpg";
 
 const Quote = () => {
   const [step, setStep] = useState(1);
@@ -43,36 +44,54 @@ const Quote = () => {
   };
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="relative py-20 bg-gradient-to-br from-primary/10 to-secondary/10">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center animate-fade-in">
-            <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4">Request a Quote</h1>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Tell us about your project and we'll provide a customized quote
-            </p>
-          </div>
+      <section className="relative min-h-[50vh] flex items-center justify-center overflow-hidden">
+        <div className="absolute inset-0 z-0" aria-hidden="true">
+          <img
+            src={aboutTeam}
+            alt="Request a project quote from AGK"
+            className="w-full h-full object-cover"
+            loading="eager"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#123326]/90 via-[#1f5a45]/80 to-[#0b1f17]/90" />
+        </div>
+        <div className="relative z-10 text-center text-white max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+          <p className="text-xs font-semibold tracking-[0.3em] uppercase text-[#fdf5e6] mb-4">
+            Project Consultation
+          </p>
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
+            Request a Quote
+          </h1>
+          <p className="text-base md:text-lg text-white/90 leading-relaxed">
+            Share your project details and our engineering team will prepare a tailored proposal for your boiler and thermal systems.
+          </p>
         </div>
       </section>
 
       {/* Multi-Step Form */}
-      <section className="py-16">
+      <section className="py-16 bg-gradient-to-b from-[#f5f7f6] to-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
           {/* Progress Bar */}
           <div className="mb-12">
             <div className="flex justify-between items-center mb-4">
               {[1, 2, 3, 4].map((num) => (
                 <div key={num} className="flex items-center flex-1">
-                  <div className={`w-10 h-10 rounded-full flex items-center justify-center font-semibold transition-colors ${
-                    num <= step ? 'bg-primary text-primary-foreground' : 'bg-muted text-muted-foreground'
-                  }`}>
+                  <div
+                    className={`w-10 h-10 rounded-full flex items-center justify-center font-semibold transition-colors ${
+                      num <= step
+                        ? "bg-[#1f5a45] text-white shadow-md"
+                        : "bg-[#e5e7eb] text-[#6b7280]"
+                    }`}
+                  >
                     {num}
                   </div>
                   {num < 4 && (
-                    <div className={`flex-1 h-1 mx-2 transition-colors ${
-                      num < step ? 'bg-primary' : 'bg-muted'
-                    }`} />
+                    <div
+                      className={`flex-1 h-1 mx-2 rounded-full transition-colors ${
+                        num < step ? "bg-[#b8892e]" : "bg-[#e5e7eb]"
+                      }`}
+                    />
                   )}
                 </div>
               ))}
@@ -85,16 +104,18 @@ const Quote = () => {
             </div>
           </div>
 
-          <Card className="border-border shadow-card">
-            <CardContent className="p-8">
+          <Card className="border-2 border-[#e1e6e2] rounded-2xl shadow-lg bg-white">
+            <CardContent className="p-8 md:p-10">
               {/* Step 1: Service Selection */}
               {step === 1 && (
                 <div className="animate-fade-in">
-                  <h2 className="text-2xl font-bold text-foreground mb-2">Select Services</h2>
+                  <h2 className="text-2xl font-bold text-[#123326] mb-2">Select Services</h2>
                   <p className="text-muted-foreground mb-6">Choose the services you're interested in</p>
                   <div className="space-y-4 mb-8">
                     {services.map((service) => (
-                      <div key={service} className="flex items-center space-x-3 p-4 border border-border rounded-lg hover:bg-muted/50 transition-colors cursor-pointer"
+                      <div
+                        key={service}
+                        className="flex items-center space-x-3 p-4 border border-[#e1e6e2] rounded-xl hover:border-[#1f5a45]/40 hover:bg-[#f5f7f6] transition-colors cursor-pointer shadow-sm"
                         onClick={() => toggleService(service)}
                       >
                         <Checkbox 
@@ -113,7 +134,7 @@ const Quote = () => {
               {/* Step 2: Project Details */}
               {step === 2 && (
                 <div className="animate-fade-in">
-                  <h2 className="text-2xl font-bold text-foreground mb-2">Project Details</h2>
+                  <h2 className="text-2xl font-bold text-[#123326] mb-2">Project Details</h2>
                   <p className="text-muted-foreground mb-6">Tell us about your project</p>
                   <div className="space-y-6">
                     <div>
@@ -184,7 +205,7 @@ const Quote = () => {
               {/* Step 3: Contact Information */}
               {step === 3 && (
                 <div className="animate-fade-in">
-                  <h2 className="text-2xl font-bold text-foreground mb-2">Contact Information</h2>
+                  <h2 className="text-2xl font-bold text-[#123326] mb-2">Contact Information</h2>
                   <p className="text-muted-foreground mb-6">How can we reach you?</p>
                   <div className="space-y-6">
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -240,7 +261,7 @@ const Quote = () => {
               {/* Step 4: Review */}
               {step === 4 && (
                 <div className="animate-fade-in">
-                  <h2 className="text-2xl font-bold text-foreground mb-2">Review Your Request</h2>
+                  <h2 className="text-2xl font-bold text-[#123326] mb-2">Review Your Request</h2>
                   <p className="text-muted-foreground mb-6">Please review your information before submitting</p>
                   <div className="space-y-6">
                     <div>
@@ -296,23 +317,29 @@ const Quote = () => {
               )}
 
               {/* Navigation Buttons */}
-              <div className="flex justify-between mt-8 pt-6 border-t border-border">
+              <div className="flex justify-between mt-8 pt-6 border-t border-[#e5e7eb]">
                 <Button
                   variant="outline"
                   onClick={prevStep}
                   disabled={step === 1}
-                  className="gap-2"
+                  className="gap-2 border-[#1f5a45] text-[#1f5a45] hover:bg-[#1f5a45]/5 disabled:opacity-50 disabled:cursor-not-allowed"
                 >
                   <ChevronLeft size={16} />
                   Previous
                 </Button>
                 {step < 4 ? (
-                  <Button onClick={nextStep} variant="secondary" className="gap-2">
+                  <Button
+                    onClick={nextStep}
+                    className="gap-2 bg-[#1f5a45] hover:bg-[#184635] text-white shadow-md px-6"
+                  >
                     Next
                     <ChevronRight size={16} />
                   </Button>
                 ) : (
-                  <Button variant="accent" size="lg">
+                  <Button
+                    size="lg"
+                    className="bg-[#b8892e] hover:bg-[#a57926] text-white shadow-lg px-8"
+                  >
                     Submit Request
                   </Button>
                 )}

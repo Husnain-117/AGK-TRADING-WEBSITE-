@@ -2,46 +2,129 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import {
+  NavigationMenu,
+  NavigationMenuList,
+  NavigationMenuItem,
+  NavigationMenuTrigger,
+  NavigationMenuContent,
+} from "@/components/ui/navigation-menu";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const navLinks = [
-    { name: "Home", path: "/" },
-    { name: "About", path: "/about" },
-    { name: "Services", path: "/services" },
-    { name: "Products", path: "/products" },
     { name: "Blog", path: "/blog" },
-    { name: "Contact", path: "/contact" },
   ];
 
   return (
     <nav className="bg-background border-b border-border sticky top-0 z-50 backdrop-blur-sm bg-background/95">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
-          <Link to="/" className="flex items-center space-x-2">
-            <div className="text-2xl font-bold text-primary">FBL Group</div>
+          <Link to="/" className="flex items-center space-x-3">
+            <img src="/logo.jpg" alt="AGK Traders Logo" className="h-9 w-9 rounded-full object-contain ring-1 ring-border" />
+            <div className="text-lg sm:text-xl font-bold text-foreground hidden sm:block">AGK Trading</div>
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
-            {navLinks.map((link) => (
-              <Link
-                key={link.name}
-                to={link.path}
-                className="text-foreground hover:text-primary transition-colors font-medium"
-              >
-                {link.name}
-              </Link>
-            ))}
-            <Button asChild variant="accent" size="sm">
+          <div className="hidden md:flex items-center space-x-3">
+            <NavigationMenu>
+              <NavigationMenuList>
+                <NavigationMenuItem>
+                  <Link
+                    to="/"
+                    className="px-3 py-2 text-sm font-semibold text-gray-900 rounded-md border-b-2 border-transparent hover:text-[#1f5a45] hover:border-[#b8892e] hover:bg-[#1f5a45]/5 transition-colors"
+                  >
+                    Home
+                  </Link>
+                </NavigationMenuItem>
+
+                <NavigationMenuItem>
+                  <NavigationMenuTrigger className="px-3 py-2 text-sm font-semibold text-gray-900 bg-transparent border-b-2 border-transparent hover:text-[#1f5a45] hover:border-[#b8892e] hover:bg-[#1f5a45]/5 transition-colors data-[state=open]:text-[#1f5a45] data-[state=open]:border-[#b8892e] data-[state=open]:bg-[#b8892e]/10">
+                    About Us
+                  </NavigationMenuTrigger>
+                  <NavigationMenuContent>
+                    <div className="grid gap-1 p-2 w-[220px]">
+                      <Link
+                        to="/about?tab=profile"
+                        className="px-3 py-2 rounded-md text-sm font-medium text-gray-800 hover:text-[#1f5a45] hover:bg-[#1f5a45]/5 transition-colors"
+                      >
+                        Company Profile
+                      </Link>
+                      <Link
+                        to="/about?tab=timeline"
+                        className="px-3 py-2 rounded-md text-sm font-medium text-gray-800 hover:text-[#1f5a45] hover:bg-[#1f5a45]/5 transition-colors"
+                      >
+                        Company Timeline
+                      </Link>
+                    </div>
+                  </NavigationMenuContent>
+                </NavigationMenuItem>
+
+                <NavigationMenuItem>
+                  <Link
+                    to="/products"
+                    className="px-3 py-2 text-sm font-semibold text-gray-900 rounded-md border-b-2 border-transparent hover:text-[#1f5a45] hover:border-[#b8892e] hover:bg-[#1f5a45]/5 transition-colors"
+                  >
+                    Products
+                  </Link>
+                </NavigationMenuItem>
+
+                <NavigationMenuItem>
+                  <NavigationMenuTrigger className="px-3 py-2 text-sm font-semibold text-gray-900 bg-transparent border-b-2 border-transparent hover:text-[#1f5a45] hover:border-[#b8892e] hover:bg-[#1f5a45]/5 transition-colors data-[state=open]:text-[#1f5a45] data-[state=open]:border-[#b8892e] data-[state=open]:bg-[#b8892e]/10">
+                    Services
+                  </NavigationMenuTrigger>
+                  <NavigationMenuContent>
+                    <div className="grid gap-1 p-2 w-[240px]">
+                      <Link
+                        to="/services"
+                        className="px-3 py-2 rounded-md text-sm font-medium text-gray-800 hover:text-[#1f5a45] hover:bg-[#1f5a45]/5 transition-colors font-semibold"
+                      >
+                        All Services
+                      </Link>
+                      <Link
+                        to="/services/engineering"
+                        className="px-3 py-2 rounded-md text-sm font-medium text-gray-800 hover:text-[#1f5a45] hover:bg-[#1f5a45]/5 transition-colors"
+                      >
+                        Engineering Services
+                      </Link>
+                      <Link
+                        to="/services/after-sales"
+                        className="px-3 py-2 rounded-md text-sm font-medium text-gray-800 hover:text-[#1f5a45] hover:bg-[#1f5a45]/5 transition-colors"
+                      >
+                        After Sales Services
+                      </Link>
+                      <Link
+                        to="/quote"
+                        className="px-3 py-2 rounded-md text-sm font-medium text-gray-800 hover:text-[#1f5a45] hover:bg-[#1f5a45]/5 transition-colors"
+                      >
+                        Get a Quote
+                      </Link>
+                    </div>
+                  </NavigationMenuContent>
+                </NavigationMenuItem>
+
+                {navLinks.map((link) => (
+                  <NavigationMenuItem key={link.name}>
+                    <Link
+                      to={link.path}
+                      className="px-3 py-2 text-sm font-semibold text-gray-900 rounded-md border-b-2 border-transparent hover:text-[#1f5a45] hover:border-[#b8892e] hover:bg-[#1f5a45]/5 transition-colors"
+                    >
+                      {link.name}
+                    </Link>
+                  </NavigationMenuItem>
+                ))}
+              </NavigationMenuList>
+            </NavigationMenu>
+
+            <Button asChild variant="secondary" size="sm">
               <Link to="/quote">Get a Quote</Link>
             </Button>
           </div>
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden text-foreground"
+            className="md:hidden text-foreground hover:text-[#1f5a45] transition-colors"
             onClick={() => setIsOpen(!isOpen)}
           >
             {isOpen ? <X size={24} /> : <Menu size={24} />}
@@ -51,18 +134,85 @@ const Navbar = () => {
         {/* Mobile Menu */}
         {isOpen && (
           <div className="md:hidden pb-4 animate-fade-in">
-            <div className="flex flex-col space-y-3">
-              {navLinks.map((link) => (
-                <Link
-                  key={link.name}
-                  to={link.path}
-                  className="text-foreground hover:text-primary transition-colors font-medium py-2"
-                  onClick={() => setIsOpen(false)}
-                >
-                  {link.name}
-                </Link>
-              ))}
-              <Button asChild variant="accent" size="sm" className="w-full">
+            <div className="flex flex-col space-y-1">
+              <Link
+                to="/"
+                className="py-2 font-medium hover:text-[#1f5a45] transition-colors"
+                onClick={() => setIsOpen(false)}
+              >
+                Home
+              </Link>
+              <details>
+                <summary className="py-2 font-medium cursor-pointer hover:text-[#1f5a45] transition-colors">About Us</summary>
+                <div className="pl-3 pb-2 flex flex-col">
+                  <Link
+                    to="/about?tab=profile"
+                    className="py-1 text-sm hover:text-[#1f5a45] transition-colors"
+                    onClick={() => setIsOpen(false)}
+                  >
+                    Company Profile
+                  </Link>
+                  <Link
+                    to="/about?tab=timeline"
+                    className="py-1 text-sm hover:text-[#1f5a45] transition-colors"
+                    onClick={() => setIsOpen(false)}
+                  >
+                    Company Timeline
+                  </Link>
+                </div>
+              </details>
+              <Link
+                to="/products"
+                className="py-2 font-medium hover:text-[#1f5a45] transition-colors"
+                onClick={() => setIsOpen(false)}
+              >
+                Products
+              </Link>
+              <details>
+                <summary className="py-2 font-medium cursor-pointer hover:text-[#1f5a45] transition-colors">Services</summary>
+                <div className="pl-3 pb-2 flex flex-col">
+                  <Link
+                    to="/services"
+                    className="py-1 text-sm hover:text-[#1f5a45] transition-colors font-semibold"
+                    onClick={() => setIsOpen(false)}
+                  >
+                    All Services
+                  </Link>
+                  <Link
+                    to="/services/engineering"
+                    className="py-1 text-sm hover:text-[#1f5a45] transition-colors"
+                    onClick={() => setIsOpen(false)}
+                  >
+                    Engineering Services
+                  </Link>
+                  <Link
+                    to="/services/after-sales"
+                    className="py-1 text-sm hover:text-[#1f5a45] transition-colors"
+                    onClick={() => setIsOpen(false)}
+                  >
+                    After Sales Services
+                  </Link>
+                  <Link
+                    to="/quote"
+                    className="py-1 text-sm hover:text-[#1f5a45] transition-colors"
+                    onClick={() => setIsOpen(false)}
+                  >
+                    Get a Quote
+                  </Link>
+                </div>
+              </details>
+              <Link
+                to="/blog"
+                className="py-2 font-medium hover:text-[#1f5a45] transition-colors"
+                onClick={() => setIsOpen(false)}
+              >
+                Blog
+              </Link>
+              <Button
+                asChild
+                size="sm"
+                className="w-full mt-2 bg-[#b8892e] hover:bg-[#a57926] text-white border-0 shadow-md hover:shadow-lg transition-colors"
+              >
                 <Link to="/quote" onClick={() => setIsOpen(false)}>
                   Get a Quote
                 </Link>
