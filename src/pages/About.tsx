@@ -94,7 +94,7 @@ const About = () => {
       name: "Haji Abdul Ghafoor",
       
       position: "CEO & Founder",
-      bio: "20+ years in industrial manufacturing",
+      bio: "23+ years in industrial manufacturing",
       photo: "/team/ceo&Founder.jpg"
     },
     {
