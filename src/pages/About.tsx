@@ -73,7 +73,7 @@ const About = () => {
       year: "2022",
       title: "Company Name Change",
       description:
-        "Amir Ali Trading Company was officially renamed AGK Trading Company (Pvt.) Ltd."
+        "Amir Ali Trading Company was officially renamed AGK Trading Company Private Limited Company (Pvt.) Ltd."
     },
     {
       year: "2024",
@@ -91,32 +91,22 @@ const About = () => {
 
   const team = [
     {
-      name: "John Anderson",
+      name: "Mr. Amir Saeed",
       position: "CEO & Founder",
       bio: "20+ years in industrial manufacturing",
-      photo:
-        "https://images.unsplash.com/photo-1544723795-3fb6469f5b39?auto=format&fit=facearea&facepad=2&w=600&h=400&q=80"
+      photo: "/team/ceo&Founder.jpg"
     },
     {
-      name: "Sarah Martinez",
-      position: "Chief Technology Officer",
+      name: "Mr. Mian Ammar Usama",
+      position: "Director",
       bio: "Expert in automation and process optimization",
-      photo:
-        "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=facearea&facepad=2&w=600&h=400&q=80"
+      photo: "/team/Drirector.jpg"
     },
     {
-      name: "Michael Chen",
-      position: "Head of Operations",
+      name: "Chief Technology Officer",
+      position: "CTO",
       bio: "Specialized in supply chain management",
-      photo:
-        "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=facearea&facepad=2&w=600&h=400&q=80"
-    },
-    {
-      name: "Emily Thompson",
-      position: "Quality Assurance Director",
-      bio: "ISO certification specialist",
-      photo:
-        "https://images.unsplash.com/photo-1544723795-432537d12f36?auto=format&fit=facearea&facepad=2&w=600&h=400&q=80"
+      photo: "/team/CTO.jpg"
     }
   ];
 
@@ -221,9 +211,9 @@ const About = () => {
           <div className="text-center max-w-3xl mx-auto animate-fade-in space-y-3">
             <h2 className="text-3xl md:text-4xl font-bold text-foreground">Introduction</h2>
             <p className="text-muted-foreground leading-relaxed">
-              AGK Trading Company (Pvt.) Ltd. is a second-generation engineering firm specializing in alternative-fuel
+              AGK Trading Company Private Limited Company (Pvt.) Ltd. is a second-generation engineering firm specializing in alternative-fuel
               boilers and industrial steam generation systems. Established in 2002 by Haji Abdul Ghafoor (late) as Amir
-              Ali Trading Company, the business was renamed AGK Trading Company (Pvt.) Ltd. in 2022.
+              Ali Trading Company, the business was renamed AGK Trading Company Private Limited Company (Pvt.) Ltd. in 2022.
             </p>
           </div>
 
@@ -231,7 +221,7 @@ const About = () => {
           <div className="animate-fade-in">
             <img
               src={aboutTeamImage}
-              alt="AGK Trading engineering team"
+              alt="AGK Trading Company Private Limited engineering team"
               loading="lazy"
               decoding="async"
               className="w-full max-w-5xl mx-auto rounded-xl shadow-elegant object-cover"
@@ -309,7 +299,7 @@ const About = () => {
             <div className="max-w-2xl">
               <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-3">Steam Supply on Biomass Fuel</h2>
               <p className="text-sm md:text-base text-muted-foreground leading-relaxed">
-                AGK Trading Company (Pvt.) Ltd. is a pioneer in rental steam supply services powered by biomass fuel,
+                AGK Trading Company Private Limited Company (Pvt.) Ltd. is a pioneer in rental steam supply services powered by biomass fuel,
                 operating large-scale biomass steam systems across multiple industrial sites while maintaining
                 EPA-compliant environmental standards and continuous emission testing.
               </p>

@@ -6,11 +6,7 @@ import {
   Facebook,
   Twitter,
   Linkedin,
-  ArrowRight,
 } from "lucide-react";
-
-import heroIndustrial from "@/assets/hero-industrial.jpg";
-import productsImage from "@/assets/products-showcase.jpg";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -26,7 +22,7 @@ const Footer = () => {
 
       {/* Main Footer Content */}
       <div className="max-w-7xl mx-auto px-6 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-10">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
           {/* About / Brand */}
           <div>
             <div className="flex items-center gap-3">
@@ -64,44 +60,10 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Recent News */}
-          <div>
-            <h3 className="text-lg font-semibold">Recent News</h3>
-            <div className="mt-4 space-y-4">
-              {[
-                { img: heroIndustrial, title: "Energy savings with waste heat recovery", date: "May, 10 2024" },
-                { img: productsImage, title: "Choosing the right thermal oil heater", date: "May, 11 2024" },
-              ].map((n, i) => (
-                <div key={i} className="flex items-center gap-3">
-                  <img src={n.img} alt="news" className="w-14 h-14 object-cover rounded" />
-                  <div className="text-sm">
-                    <div className="text-primary-foreground leading-snug line-clamp-1">{n.title}</div>
-                    <div className="text-primary-foreground/70 text-xs">Date: {n.date}</div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Contact Info / Newsletter */}
+          {/* Contact Info */}
           <div>
             <h3 className="text-lg font-semibold">Contact Info</h3>
-            <p className="mt-3 text-sm text-primary-foreground/90">Subscribe to get our latest updates & news</p>
-            <div className="mt-4 flex items-center gap-3">
-              <input
-                type="email"
-                placeholder="Your Email"
-                className="w-full rounded-md bg-primary-foreground/10 placeholder-primary-foreground/80 text-primary-foreground px-3 py-2 ring-1 ring-primary-foreground/20 focus:ring-primary-foreground/40 outline-none"
-              />
-            </div>
-            <button
-              className="mt-3 inline-flex items-center gap-2 rounded-md bg-secondary px-4 py-2 text-secondary-foreground hover:bg-secondary/90 transition-colors"
-              aria-label="Subscribe"
-            >
-              Subscribe Now
-              <ArrowRight className="w-4 h-4" />
-            </button>
-            <div className="mt-5 space-y-2 text-sm text-primary-foreground/90">
+            <div className="mt-4 space-y-2 text-sm text-primary-foreground/90">
               <div className="flex items-start gap-2">
                 <MapPin className="w-4 h-4 mt-0.5" />
                 <span>Faisal Colony Street #01, Plot #01, Arifwala Road, Sahiwal</span>

@@ -39,7 +39,7 @@ const Admin = () => {
       <div className="bg-background border-b border-border">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-6">
           <h1 className="text-3xl font-bold text-foreground">Admin Dashboard</h1>
-          <p className="text-muted-foreground">Manage your FBL Group website</p>
+          <p className="text-muted-foreground">Manage your AGK Trading Company Private Limited website</p>
         </div>
       </div>
 

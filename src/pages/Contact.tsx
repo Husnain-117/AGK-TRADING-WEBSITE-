@@ -42,7 +42,7 @@ const Contact = () => {
     },
     {
       question: "What certifications do you hold?",
-      answer: "FBL Group is ISO 9001:2015 certified for quality management. We also maintain compliance with industry-specific standards including AS9100 for aerospace and IATF 16949 for automotive sectors."
+      answer: "AGK Trading Company Private Limited is ISO 9001:2015 certified for quality management. We also maintain compliance with industry-specific standards including AS9100 for aerospace and IATF 16949 for automotive sectors."
     },
     {
       question: "Can you customize products to our specifications?",
