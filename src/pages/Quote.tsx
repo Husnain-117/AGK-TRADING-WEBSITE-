@@ -378,9 +378,9 @@ const Quote = () => {
               <div>
                 <h3 className="text-sm font-semibold text-[#123326] mb-1">Contact Details</h3>
                 <p className="text-xs text-muted-foreground leading-relaxed whitespace-pre-line">
-                  C.E.O: Mr. Amir Saeed - +92 300 8690691
+                  C.E.O: Mr. Amir Saeed  +92 300 8690691
                   {"\n"}
-                  Director: Mr. Mian Ammar Usama - +92 300 4493333, +92 316 4044444
+                  Director: Mr. Mian Ammar Usama  +92 300 4493333, +92 316 4044444
                   {"\n"}
                   Email: agktrading365@gmail.com
                 </p>

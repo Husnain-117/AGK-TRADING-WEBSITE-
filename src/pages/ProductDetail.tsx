@@ -1,6 +1,7 @@
 import { useParams, Link } from "react-router-dom";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
+import { Dialog, DialogContent } from "@/components/ui/dialog";
 import { ArrowLeft, ArrowRight, CheckCircle2, ChevronLeft, ChevronRight, Download } from "lucide-react";
 import productsImage from "@/assets/products-showcase.jpg";
 
@@ -246,6 +247,8 @@ const ProductDetail = () => {
   const { slug } = useParams<{ slug: string }>();
   const product = slug ? productDatabase[slug as keyof typeof productDatabase] : null;
   const [currentSpecCard, setCurrentSpecCard] = useState(0);
+  const [isViewerOpen, setIsViewerOpen] = useState(false);
+  const [activeImage, setActiveImage] = useState<string | null>(null);
 
   if (!product) {
     return (
@@ -451,21 +454,20 @@ const ProductDetail = () => {
                 {product.images.map((img, idx) => (
                   <div
                     key={idx}
-                    className="group relative rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 bg-white border-2 border-[#e1e6e2]"
+                    className="group relative rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 bg-white border-2 border-[#e1e6e2] cursor-pointer"
+                    onClick={() => {
+                      setActiveImage(img);
+                      setIsViewerOpen(true);
+                    }}
                   >
                     <div className="relative h-56 overflow-hidden bg-[#f5f7f6]">
                       <img
                         src={img}
-                        alt={`${product.name} - Image ${idx + 1}`}
+                        alt={`${product.name}`}
                         loading="lazy"
                         className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-[#123326]/60 via-transparent to-transparent" />
-                      <div className="absolute top-4 left-4">
-                        <span className="inline-block px-3 py-1 rounded-full bg-[#1f5a45] text-white text-xs font-semibold">
-                          Image {idx + 1}
-                        </span>
-                      </div>
                     </div>
                     <div className="p-5 space-y-3">
                       <h3 className="text-base font-semibold text-[#123326]">
@@ -482,6 +484,19 @@ const ProductDetail = () => {
                   </div>
                 ))}
               </div>
+              <Dialog open={isViewerOpen} onOpenChange={setIsViewerOpen}>
+                <DialogContent className="max-w-4xl bg-[#0b1f17]/95 border-[#1f5a45]/40 p-0 overflow-hidden">
+                  {activeImage && (
+                    <div className="relative">
+                      <img
+                        src={activeImage}
+                        alt={product.name}
+                        className="w-full max-h-[80vh] object-contain bg-black"
+                      />
+                    </div>
+                  )}
+                </DialogContent>
+              </Dialog>
             </div>
 
             {/* Conclusion */}

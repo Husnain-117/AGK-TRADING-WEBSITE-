@@ -18,6 +18,8 @@ import Admin from "./pages/Admin";
 import NotFound from "./pages/NotFound";
 import EngineeringServices from "./pages/EngineeringServices";
 import AfterSalesServices from "./pages/AfterSalesServices";
+import SteamSupplyServices from "./pages/SteamSupplyServices";
+import SparePartsServices from "./pages/SparePartsServices";
 import Values from "./pages/Values";
 
 const queryClient = new QueryClient();
@@ -38,6 +40,8 @@ const AppContent = () => {
               <Route path="/services" element={<Services />} />
               <Route path="/services/engineering" element={<EngineeringServices />} />
               <Route path="/services/after-sales" element={<AfterSalesServices />} />
+              <Route path="/services/steam-supply" element={<SteamSupplyServices />} />
+              <Route path="/services/spare-parts" element={<SparePartsServices />} />
               <Route path="/products" element={<Products />} />
               <Route path="/products/:slug" element={<ProductDetail />} />
               <Route path="/blog" element={<Blog />} />

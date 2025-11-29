@@ -94,20 +94,19 @@ const About = () => {
       name: "Haji Abdul Ghafoor",
       
       position: "CEO & Founder",
-      bio: "23+ years in industrial manufacturing",
+      
       photo: "/team/ceo&Founder.jpg"
+    },
+    
+    {
+      name: "Mr. Amir Saeed",
+      position: "Chief Executive",
+      photo: "/team/CTO.jpg"
     },
     {
       name: "Mr. Mian Ammar Usama",
       position: "Director",
-      bio: "Expert in automation and process optimization",
       photo: "/team/Drirector.jpg"
-    },
-    {
-      name: "Mr. Amir Saeed",
-      position: "Chief Executive",
-      bio: "Specialized in supply chain management",
-      photo: "/team/CTO.jpg"
     }
   ];
 
@@ -293,14 +292,14 @@ const About = () => {
         </div>
       </section>
 
-      {/* Biomass Steam Supply Showcase - Professional Carousel */}
-      <section className="pb-16 md:pb-24 bg-gradient-to-b from-background to-muted/20">
+      {/* Biomass Steam Supply Showcase - Professional Carousel (temporarily commented out) */}
+      <section className="hidden pb-16 md:pb-24 bg-gradient-to-b from-background to-muted/20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-8">
             <div className="max-w-2xl">
               <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-3">Steam Supply on Biomass Fuel</h2>
               <p className="text-sm md:text-base text-muted-foreground leading-relaxed">
-                AGK Trading Company Private Limited Company (Pvt.) Ltd. is a pioneer in rental steam supply services powered by biomass fuel,
+                AGK Trading Company Private a0Limited Company (Pvt.) Ltd. is a pioneer in rental steam supply services powered by biomass fuel,
                 operating large-scale biomass steam systems across multiple industrial sites while maintaining
                 EPA-compliant environmental standards and continuous emission testing.
               </p>
@@ -484,9 +483,7 @@ const About = () => {
                     {member.position}
                   </p>
                   <div className="h-px w-12 bg-gradient-to-r from-transparent via-[#1f5a45]/40 to-transparent mb-4" />
-                  <p className="text-sm text-muted-foreground leading-relaxed">
-                    {member.bio}
-                  </p>
+                  
                 </CardContent>
               </Card>
             ))}

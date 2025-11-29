@@ -66,23 +66,30 @@ const Footer = () => {
             <div className="mt-4 space-y-2 text-sm text-primary-foreground/90">
               <div className="flex items-start gap-2">
                 <MapPin className="w-4 h-4 mt-0.5" />
-                <span>Faisal Colony Street #01, Plot #01, Arifwala Road, Sahiwal</span>
+                <span>(Head Office) Faisal Colony Street #01, Plot #01, Arifwala Road, Sahiwal</span>
               </div>
               <div className="flex items-start gap-2">
                 <MapPin className="w-4 h-4 mt-0.5" />
-                <span>06 km Sahiwal Arifwala Road, Sahiwal</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <Phone className="w-4 h-4" />
-                <span>C.E.O: Mr. Amir Saeed - +92 300 8690691</span>
+                <span>(Engineering Markaz)06 km Sahiwal Arifwala Road, Sahiwal</span>
               </div>
               <div className="flex items-start gap-2">
                 <Phone className="w-4 h-4 mt-0.5" />
-                <span>Director: Mr. Mian Ammar Usama - +92 300 4493333, +92 316 4044444</span>
+                <span className="flex flex-col">
+                  <span>C.E.O: Mr. Amir Saeed</span>
+                  <span>+92 300 8690691</span>
+                </span>
+              </div>
+              <div className="flex items-start gap-2">
+                <Phone className="w-4 h-4 mt-0.5" />
+                <span className="flex flex-col">
+                  <span>Director: Mr. Mian Ammar Usama</span>
+                  <span>+92 300 4493333, +92 316 4044444</span>
+                </span>
               </div>
               <div className="flex items-center gap-2">
                 <Mail className="w-4 h-4" />
                 <span>agktrading365@gmail.com</span>
+                <span>ammar87311@gmail.com</span>
               </div>
             </div>
           </div>

@@ -146,52 +146,44 @@ const Home = () => {
       title: "Advanced Manufacturing",
       description:
         "Steam Boilers, Waste Heat Boilers, Thermal Oil Heaters & Pressure Vessels / Storage Tanks.",
-      image: "/Package Fire Tube Steam Boiler/2.jpeg.jpg",
       link: "/products",
+      icon: Settings,
     },
     {
       title: "Fuel Conversion Engineering",
       description:
         "Conversion systems for Solid Fuels (Coal, Biomass) and Liquid Fuels for boilers and heaters.",
-      image: "/Water Tube Steam Boiler/2.jpeg.jpg",
       link: "/services?cat=fuel-conversion",
+      icon: Flame,
     },
     {
       title: "Waste Recovery System",
       description:
         "Waste heat boilers, heat recovery economizers, air pre-heaters and heat exchangers.",
-      image: "/Waste Heat Steam Boiler/2.jpeg.jpg",
       link: "/products?type=waste-heat-steam-boiler",
+      icon: Recycle,
     },
     {
       title: "Overhauling Services",
       description:
         "Complete overhauling services for boilers and thermal oil heaters.",
-      image: "/Thermal Oil Heater/4.jpeg.jpg",
       link: "/services?cat=after-sales",
+      icon: Wrench,
     },
     {
       title: "Engineering Services",
       description:
         "Spare parts for industrial boilers, oil heaters, chain grate and biomass fuel systems, supplied to your exact specifications.",
-      image: "/Spare Parts/5.jpeg.jpg",
       link: "/services/engineering",
+      icon: Truck,
     },
     {
       title: "After Sales Support",
       description: "Commissioning, maintenance, and technical support by expert engineers.",
-      image: "/Gas & Oil Steam Boiler/4.jpeg.jpg",
       link: "/services?cat=after-sales",
+      icon: Users,
     },
   ];
-
-  const [servicesPage, setServicesPage] = useState(0);
-  const servicesPageSize = 3;
-  const servicesTotalPages = Math.ceil(servicesShowcase.length / servicesPageSize);
-  const paginatedServices = servicesShowcase.slice(
-    servicesPage * servicesPageSize,
-    servicesPage * servicesPageSize + servicesPageSize,
-  );
 
   // Testimonials data (brand-themed)
   const testimonials = [
@@ -299,11 +291,10 @@ const Home = () => {
           ))}
         </div>
       </section>
-      {/* Why Choose Us Section */}
+      {/* Why Choose Us Section (temporarily commented out)
       <section className="py-16 md:py-24 bg-primary/5">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
-            {/* Textual pitch */}
             <div>
               <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-semibold tracking-widest uppercase">
                 <span className="inline-block w-8 h-[2px] rounded bg-primary" /> Why Choose Us
@@ -316,7 +307,6 @@ const Home = () => {
                 safe, efficient, and durable systems tailored to your industry needs.
               </p>
 
-              {/* Left-divider bullet list */}
               <div className="mt-8">
                 <div className="bg-card border border-border rounded-md p-6">
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-10 gap-y-4 border-l-2 border-primary pl-6">
@@ -347,7 +337,6 @@ const Home = () => {
               </div>
             </div>
 
-            {/* Visual panel (large image + overlapping small image) */}
             <div className="relative">
               <div className="rounded-3xl overflow-hidden shadow-[0_30px_80px_-20px_rgba(0,0,0,0.35)] ring-1 ring-border">
                 <img
@@ -358,81 +347,55 @@ const Home = () => {
                   decoding="async"
                 />
               </div>
-              {/* <div className="absolute -bottom-8 -left-8 w-40 sm:w-48 rounded-xl overflow-hidden ring-4 ring-white shadow-[0_20px_60px_-15px_rgba(0,0,0,0.4)] bg-background">
-                <img
-                  src="https://media.istockphoto.com/id/838476004/photo/silhouette-of-engineer-and-construction-team-working-safely-work-load-concrete-on-scaffolding.webp?a=1&b=1&s=612x612&w=0&k=20&c=xXLKeqSFDdox0mTueiK01FcN-GEQmycwYpIYhis0nBg="
-                  alt="Expert engineering team"
-                  className="w-full h-full object-cover"
-                  loading="lazy"
-                  decoding="async"
-                />
-              </div> */}
             </div>
           </div>
         </div>
       </section>
+      */}
 
       {/* Services (third section) styled like the shared template */}
-      <section className="py-16 md:py-24 bg-muted/50">
+      <section className="py-16 md:py-24 bg-[#faf8f3]">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-10">
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground">Our Awesome Services</h2>
+          <div className="text-center mb-12">
+            <span className="text-xs font-bold tracking-[0.2em] uppercase text-[#1f5a45] mb-3 block">
+              — Our Services
+            </span>
+            <h2 className="text-3xl md:text-4xl font-bold text-[#123326]">Comprehensive Industrial Solutions</h2>
+            <div className="mt-4 h-1 w-20 bg-[#b8892e] mx-auto rounded-full" />
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
-            {paginatedServices.map((svc, idx) => (
-              <div
-                key={`${servicesPage}-${idx}`}
-                className="relative group rounded-xl cursor-pointer"
-                onClick={() => (window.location.href = svc.link)}
+            {servicesShowcase.map((svc) => (
+              <Link
+                key={svc.title}
+                to={svc.link}
+                className="group h-full"
               >
-                {/* Card body */}
-                <div className="relative z-10 rounded-xl bg-card shadow-sm ring-1 ring-border overflow-hidden transition-all duration-300 group-hover:shadow-elegant">
-                  <div className="p-5 sm:p-6">
-                    <h3 className="text-xl font-semibold text-foreground">{svc.title}</h3>
-                    <p className="mt-3 text-muted-foreground leading-relaxed line-clamp-3">{svc.description}</p>
-                    <Button asChild variant="link" className="mt-4 p-0 h-auto text-primary">
-                      <Link to={svc.link}>
-                        Read More
-                        <span className="ml-2 inline-flex items-center justify-center w-6 h-6 rounded-full border border-border">
-                          <svg className="w-3.5 h-3.5" viewBox="0 0 24 24" fill="currentColor"><path d="M10 17l5-5-5-5v10z"/></svg>
+                <div className="h-full rounded-2xl border border-[#e1e6e2] bg-white shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+                  <div className="p-6 flex flex-col h-full">
+                    <div className="mb-5 flex justify-center">
+                      <div className="w-12 h-12 rounded-full bg-[#1f5a45]/10 flex items-center justify-center text-[#1f5a45]">
+                        {svc.icon && <svc.icon className="w-6 h-6" />}
+                      </div>
+                    </div>
+                    <h3 className="text-lg font-semibold text-[#123326] text-center mb-2 group-hover:text-[#1f5a45]">
+                      {svc.title}
+                    </h3>
+                    <p className="text-sm text-muted-foreground text-center leading-relaxed flex-1">
+                      {svc.description}
+                    </p>
+                    <div className="mt-4 flex justify-center">
+                      <span className="inline-flex items-center gap-2 text-xs font-semibold text-[#1f5a45] group-hover:text-[#b8892e]">
+                        Learn More
+                        <span className="inline-flex items-center justify-center w-5 h-5 rounded-full border border-[#e1e6e2] group-hover:border-[#b8892e]">
+                          <svg className="w-3 h-3" viewBox="0 0 24 24" fill="currentColor"><path d="M9 6l6 6-6 6V6z"/></svg>
                         </span>
-                      </Link>
-                    </Button>
-                  </div>
-                  {/* Image bottom */}
-                  <div className="relative border-t border-border overflow-hidden">
-                    <img
-                      src={svc.image}
-                      alt={svc.title}
-                      className="w-full h-44 sm:h-48 object-cover transition-transform duration-500 group-hover:scale-105"
-                      loading="lazy"
-                      decoding="async"
-                    />
-                    {/* Corner ribbon */}
-                    <div className="absolute top-0 right-0 w-3 h-3 bg-secondary rounded-bl" />
+                      </span>
+                    </div>
                   </div>
                 </div>
-              </div>
+              </Link>
             ))}
-          </div>
-
-          {/* Navigation */}
-          <div className="flex justify-center mt-10 gap-6" role="navigation" aria-label="Services pagination">
-            <button
-              onClick={() => setServicesPage((p) => (p - 1 + servicesTotalPages) % servicesTotalPages)}
-              className="w-12 h-12 bg-background border border-border rounded-full flex items-center justify-center hover:bg-muted transition-colors"
-              aria-label="Previous services"
-            >
-              <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M15 18l-6-6 6-6v12z"/></svg>
-            </button>
-            <button
-              onClick={() => setServicesPage((p) => (p + 1) % servicesTotalPages)}
-              className="w-12 h-12 bg-secondary text-secondary-foreground rounded-full flex items-center justify-center hover:bg-secondary/90 transition-colors"
-              aria-label="Next services"
-            >
-              <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M9 6l6 6-6 6V6z"/></svg>
-            </button>
           </div>
         </div>
       </section>

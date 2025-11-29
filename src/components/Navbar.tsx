@@ -126,6 +126,18 @@ const Navbar = () => {
                         Engineering Services
                       </Link>
                       <Link
+                        to="/services/spare-parts"
+                        className="px-3 py-2 rounded-md text-sm font-medium text-gray-800 hover:text-[#1f5a45] hover:bg-[#1f5a45]/5 transition-colors"
+                      >
+                        Spare Parts Services
+                      </Link>
+                      <Link
+                        to="/services/steam-supply"
+                        className="px-3 py-2 rounded-md text-sm font-medium text-gray-800 hover:text-[#1f5a45] hover:bg-[#1f5a45]/5 transition-colors"
+                      >
+                        Steam Supply Services
+                      </Link>
+                      <Link
                         to="/services/after-sales"
                         className="px-3 py-2 rounded-md text-sm font-medium text-gray-800 hover:text-[#1f5a45] hover:bg-[#1f5a45]/5 transition-colors"
                       >
@@ -261,6 +273,20 @@ const Navbar = () => {
                     onClick={() => setIsOpen(false)}
                   >
                     Engineering Services
+                  </Link>
+                  <Link
+                    to="/services/spare-parts"
+                    className="py-1 text-sm hover:text-[#1f5a45] transition-colors"
+                    onClick={() => setIsOpen(false)}
+                  >
+                    Spare Parts Services
+                  </Link>
+                  <Link
+                    to="/services/steam-supply"
+                    className="py-1 text-sm hover:text-[#1f5a45] transition-colors"
+                    onClick={() => setIsOpen(false)}
+                  >
+                    Steam Supply Services
                   </Link>
                   <Link
                     to="/services/after-sales"
