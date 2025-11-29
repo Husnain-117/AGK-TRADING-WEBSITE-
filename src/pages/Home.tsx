@@ -275,8 +275,7 @@ const Home = () => {
                 </div>
                 <div>
                   <div className="text-xs uppercase tracking-wider font-semibold text-white/80">Phone Number</div>
-                  <div className="text-xl font-bold text-white">Office: +92 300 8690691
-</div>
+                  <div className="text-xl font-bold text-white">Office: 0300-4493333</div>
                 </div>
               </div>
             </div>
@@ -438,10 +437,10 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Testimonials Section */}
+      {/* Testimonials Section (commented out)
       <section className="relative overflow-hidden py-16 md:py-24 bg-primary/10">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
-          {/* Image / avatar */}
+          
           <div className="relative order-2 lg:order-1">
             <div className="absolute -left-4 top-0 bottom-0 w-1.5 bg-secondary/80 rounded-full" />
             <img
@@ -453,7 +452,7 @@ const Home = () => {
             />
           </div>
 
-          {/* Content */}
+          
           <div className="order-1 lg:order-2 space-y-6">
             <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-semibold tracking-widest uppercase">
               <span className="w-1.5 h-1.5 rounded-full bg-secondary" /> Client Testimonials
@@ -494,6 +493,7 @@ const Home = () => {
           </div>
         </div>
       </section>
+      */}
 
       {/* Thin CTA strip (moved to just before footer) */}
       <section className="relative overflow-hidden" aria-label="Call to action">
