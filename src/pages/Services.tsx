@@ -15,13 +15,17 @@ import {
 } from "lucide-react";
 import aboutTeam from "@/assets/about-team.jpg";
 
-// Shared product images from Home page
+// Shared product images from local public folders (AGK project photos)
 const productImages = [
-  "https://images.unsplash.com/photo-1513828583688-c52646db42da?q=80&w=800&auto=format&fit=crop",
-  "https://images.unsplash.com/photo-1627807452369-a2cd0b5ca56f?q=80&w=800&auto=format&fit=crop",
-  "https://images.unsplash.com/photo-1647427060118-4911c9821b82?q=80&w=800&auto=format&fit=crop",
-  "https://images.unsplash.com/photo-1664087783968-0cd7deee8390?q=80&w=800&auto=format&fit=crop",
-  "https://images.unsplash.com/photo-1513828583688-c52646db42da?q=80&w=800&auto=format&fit=crop",
+  // Engineering Services – general boiler plant
+  "/Package Fire Tube Steam Boiler/2.jpeg.jpg",
+  // After Sales Services – gas & oil boiler maintenance
+  "/Gas & Oil Steam Boiler/4.jpeg.jpg",
+  // Our Values – waste heat / efficiency themed image
+  "/Waste Heat Steam Boiler/2.jpeg.jpg",
+  // Extra images kept for potential future cards
+  "/Water Tube Steam Boiler/3.jpeg.jpg",
+  "/Thermal Oil Heater/4.jpeg.jpg",
 ];
 
 const Services = () => {
@@ -245,42 +249,44 @@ const Services = () => {
             </p>
           </div>
 
-          <div className="space-y-16">
-            {mainServices.map((service, index) => (
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {mainServices.map((service) => (
               <div
                 key={service.link}
-                className={`grid grid-cols-1 lg:grid-cols-2 gap-12 items-center ${index % 2 === 1 ? "lg:grid-flow-col-dense" : ""}`}
+                className="group bg-white rounded-2xl border-2 border-[#e1e6e2] shadow-md hover:shadow-2xl hover:border-[#1f5a45]/30 transition-all duration-300 hover:-translate-y-1 flex flex-col"
               >
-                <div className={`${index % 2 === 1 ? "lg:col-start-2" : ""}`}>
-                  <div className="mb-6">{service.icon}</div>
-                  <h3 className="text-2xl sm:text-3xl font-bold mb-3 sm:mb-4 font-heading">{service.title}</h3>
-                  <p className="text-muted-foreground leading-relaxed mb-6">{service.description}</p>
-
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-8">
-                    {service.features.map((feature) => (
-                      <div key={`${service.title}-${feature}`} className="flex items-center gap-2">
-                        <CheckCircle className="w-4 h-4 text-green-600" aria-hidden="true" />
-                        <span className="text-sm font-medium text-gray-700">{feature}</span>
-                      </div>
-                    ))}
+                <div className="p-6 flex flex-col h-full">
+                  <div className="flex items-start justify-between mb-4">
+                    <div className="w-12 h-12 rounded-full bg-gradient-to-br from-[#1f5a45] to-[#2d7a5e] flex items-center justify-center shadow-lg text-white">
+                      {service.icon}
+                    </div>
+                    <span className="text-[10px] font-semibold tracking-[0.18em] uppercase text-[#b8892e]">
+                      Core Service
+                    </span>
                   </div>
 
-                  <Link to={service.link}>
-                    <Button size="lg" className="bg-[#1f5a45] hover:bg-[#184635] text-white shadow-lg px-6">
-                      Read More
-                      <ArrowRight className="w-5 h-5 ml-2" aria-hidden="true" />
-                    </Button>
-                  </Link>
-                </div>
+                  <h3 className="text-lg md:text-xl font-bold text-[#123326] mb-2">{service.title}</h3>
+                  <p className="text-sm text-muted-foreground mb-4 leading-relaxed">
+                    {service.description}
+                  </p>
 
-                <div className={`${index % 2 === 1 ? "lg:col-start-1" : ""}`}>
-                  <img
-                    src={service.image}
-                    alt={service.title}
-                    loading="lazy"
-                    decoding="async"
-                    className="rounded-lg shadow-xl w-full h-56 sm:h-64 md:h-80 object-cover"
-                  />
+                  <ul className="space-y-2 mb-6">
+                    {service.features.map((feature) => (
+                      <li key={`${service.title}-${feature}`} className="flex items-center gap-2 text-sm text-muted-foreground">
+                        <CheckCircle className="w-4 h-4 text-[#1f5a45]" aria-hidden="true" />
+                        <span>{feature}</span>
+                      </li>
+                    ))}
+                  </ul>
+
+                  <div className="mt-auto pt-2">
+                    <Link to={service.link}>
+                      <Button size="lg" className="w-full bg-[#1f5a45] hover:bg-[#184635] text-white shadow-lg px-6">
+                        Read More
+                        <ArrowRight className="w-5 h-5 ml-2" aria-hidden="true" />
+                      </Button>
+                    </Link>
+                  </div>
                 </div>
               </div>
             ))}

@@ -1,4 +1,4 @@
-import { Button } from "@/components/ui/button";
+ import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent } from "@/components/ui/dialog";
 import aboutTeam from "@/assets/about-team.jpg";
 import { ArrowRight, CheckCircle, Package, Wrench, Shield } from "lucide-react";
@@ -16,22 +16,22 @@ const SparePartsServices = () => {
       description:
         "Essential boiler spares including furnace flue sections, expansion bellows, feed water & thermal oil pumps, mounting fittings and safety valves.",
       bullets: [
-        "Boiler furnace flue and expansion bellows",
-        "Feed water & thermal oil pumps",
-        "Boiler mounting fittings and safety valves",
-        "Refractory, insulation & cladding materials",
+        "Mounting Fitting",
+        "Safety Valve",
+        "Stop Valve",
+        "Blowdown Valve",
       ],
       images: [1, 2, 3, 4],
     },
     {
-      title: "Boiler House Accessories",
+      title: "Feed Water Pump & Fitting",
       description:
-        "Complete accessories around the boiler house such as steam accumulators, super heaters, pressure vessels and heat exchangers.",
+        "Feed water and thermal oil pumps with associated valves and fittings for reliable circulation and control.",
       bullets: [
-        "Steam accumulators and super heaters",
-        "Pressure vessels and storage tanks",
-        "Heat exchangers and economisers",
-        "Blowdown, deaeration & condensate equipment",
+        "Feed Water & Thermal Oil Pump",
+        "Strainer Valve",
+        "Globe Valve",
+        "Gate Valve",
       ],
       images: [5, 6, 7, 8],
     },
@@ -48,16 +48,64 @@ const SparePartsServices = () => {
       images: [9, 10, 11, 12],
     },
     {
-      title: "Boiler Auxiliary Equipment",
+      title: "Boiler House Accessories",
       description:
-        "Critical auxiliaries and handling systems that keep boiler plants reliable, efficient and easy to maintain.",
+        "Key equipment installed around the boiler such as tanks, heat exchangers and steam headers.",
       bullets: [
-        "Economisers and air pre-heaters",
-        "ID / FD fans and dampers",
-        "Fuel handling systems & coal crushers",
-        "Instrumentation and safety controls",
+        "Feed Water Tank",
+        "Heat-Exchanger",
+        "Super Heater",
+        "Steam Header",
       ],
       images: [13, 14, 15, 16],
+    },
+    {
+      title: "Chain Grate Spare Parts",
+      description:
+        "Specialized components and wearing parts for chain grate firing systems and their internal mechanisms.",
+      bullets: [
+        "Chain Grate",
+        "CG Internal Parts",
+        "Chain Grate Parts",
+        "Feeding Damper",
+      ],
+      images: [17, 18, 19, 20],
+    },
+    {
+      title: "Fuel Feeding & Ash Conveyor",
+      description:
+        "Fuel feeding and ash handling conveyors that ensure safe, continuous and clean boiler operation.",
+      bullets: [
+        "Feeding Belt Conveyor",
+        "Feeding Elevator",
+        "ASH Conveyor",
+        "ASH Screw Worm",
+      ],
+      images: [21, 22, 23, 24],
+    },
+    {
+      title: "Boiler Auxiliary Equipment",
+      description:
+        "Critical auxiliaries that support efficient heat recovery and air movement in the boiler plant.",
+      bullets: [
+        "Economizers",
+        "Air Pre Heaters",
+        "I-D Fan",
+        "F-D Fan",
+      ],
+      images: [25, 26, 27, 28],
+    },
+    {
+      title: "Instrumentation for Boiler",
+      description:
+        "Instrumentation and metering devices for monitoring flow, level and performance of boiler systems.",
+      bullets: [
+        "Steam Flow Meter",
+        "Water Flow Meter",
+        "Thermal Oil Meter",
+        "Boiler Mobrey Water Level",
+      ],
+      images: [29, 30, 31, 32],
     },
   ];
 
@@ -98,17 +146,20 @@ const SparePartsServices = () => {
               </span>
               <h2 className="text-3xl md:text-4xl font-bold text-[#123326] mb-4">Industrial Boiler Components & Spare Parts</h2>
               <p className="text-sm md:text-base text-muted-foreground leading-relaxed mb-3">
-                We provide spare parts for every type of industrial boiler, oil heater, steam generator and chain grate
-                system. From essential safety valves and pumps to complete boiler peripherals, AGK ensures that the right
-                parts are available when your plant needs them.
+                We provide spare parts for every type of industrial boiler, oil heater, steam generator, chain grate and
+                biomass fuel firing systems. In addition, we offer a bespoke parts service for a wide range of items
+                manufactured and supplied to our customers&apos; exact specifications.
               </p>
               <p className="text-sm md:text-base text-muted-foreground leading-relaxed mb-3">
-                Our spare parts service supports short and medium-term parts supply by determining essential items and
-                recommended stock levels tailored to each customer&apos;s operating and maintenance strategy.
+                AGK Industrial Services helps you address the challenge of short and medium-term parts supply by
+                pre-determining a list of essential spare parts and recommended spares holding, tailored to each
+                customer&apos;s operational and maintenance needs.
               </p>
               <p className="text-sm md:text-base text-muted-foreground leading-relaxed">
-                A comprehensive stock of genuine spares minimizes downtime and keeps operations safe, reliable and
-                profitable over the entire life of your equipment.
+                Process industries depend on the timely supply of spare parts to keep operations safe, reliable and
+                profitable over the full lifetime of their equipment. A comprehensive stock of genuine spares minimizes
+                downtime by ensuring the correct parts are readily available. AGK Industrial Services provides a complete
+                line of boiler peripherals and auxiliary equipment to support this objective.
               </p>
             </div>
 
@@ -187,7 +238,7 @@ const SparePartsServices = () => {
                   </div>
                 </div>
                 <div className="bg-[#fafafa] rounded-xl p-4 border border-[#e1e6e2] flex items-center justify-center">
-                  <div className="grid grid-cols-2 gap-3 w-full max-w-md">
+                  <div className="grid grid-cols-2 md:grid-cols-4 gap-3 w-full max-w-xl">
                     {cat.images.map((num) => (
                       <div
                         key={num}

@@ -2,15 +2,42 @@ import { Button } from "@/components/ui/button";
 import aboutTeam from "@/assets/about-team.jpg";
 import { ArrowRight, CheckCircle, Flame, Factory, Leaf } from "lucide-react";
 import { useNavigate } from "react-router-dom";
+import { useEffect, useState } from "react";
 
 const biomassProjects = [
-  "Nishat Sutas Dairy Ltd., Faisalabad (Since 2024)",
   "Punjab Oil Mills (Canolive Oil), Islamabad (Since 2011)",
   "N.B.C Unit No. 01 (Pepsi Cola), Model Town Gujranwala (Since 2013)",
+  "Sitara Vegetable Ghee Mills, Gajjumatta Lahore (Since 2014)",
+  "N.B.C Unit No. 02 (Pepsi Cola), Attawa Gujranwala (Since 2014)",
+  "Haidri Beverages Ltd. (Pepsi Cola), Islamabad (Since 2016)",
+  "Nishat Textile Mills (Apparel Division), Gajjumatta Lahore (Since 2018)",
+  "Nishat Textile Mills (Bath Division), Gajjumatta Lahore (Since 2018)",
+  "Nishat Sutas Dairy Ltd., Faisalabad (Since 2024)",
 ];
+
+const biomassVisible = 3;
 
 const SteamSupplyServices = () => {
   const navigate = useNavigate();
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  // Auto-advance carousel
+  useEffect(() => {
+    const id = setInterval(() => {
+      setCurrentIndex((prev) => (prev + 1) % biomassProjects.length);
+    }, 6000);
+    return () => clearInterval(id);
+  }, []);
+
+  // Get 3 consecutive cards with circular wrapping
+  const getVisibleProjects = () => {
+    const visible = [] as { project: string; displayNumber: number }[];
+    for (let i = 0; i < biomassVisible; i++) {
+      const index = (currentIndex + i) % biomassProjects.length;
+      visible.push({ project: biomassProjects[index], displayNumber: index + 1 });
+    }
+    return visible;
+  };
 
   return (
     <div className="min-h-screen bg-white">
@@ -106,15 +133,16 @@ const SteamSupplyServices = () => {
         </div>
       </section>
 
-      {/* Biomass Steam Supply Showcase - adapted from About */}
+      {/* Biomass Steam Supply Showcase - Carousel */}
       <section className="pb-16 md:pb-24 bg-gradient-to-b from-background to-muted/20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-8">
             <div className="max-w-2xl">
               <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-3">Steam Supply on Biomass Fuel</h2>
               <p className="text-sm md:text-base text-muted-foreground leading-relaxed">
-                AGK operates large-scale biomass steam systems across multiple industrial sites, delivering audited and
-                documented steam supply with full safety, quality and environmental compliance.
+                AGK Trading Company Private Limited Company (Pvt.) Ltd. is a pioneer in rental steam supply services powered by biomass fuel,
+                operating large-scale biomass steam systems across multiple industrial sites while maintaining EPA-compliant
+                environmental standards and continuous emission testing.
               </p>
             </div>
             <span className="inline-flex items-center rounded-full border border-[#b8892e]/40 bg-[#fdf5e6] px-4 py-2 text-xs font-semibold tracking-widest uppercase text-[#1f5a45] shadow-sm whitespace-nowrap">
@@ -122,36 +150,84 @@ const SteamSupplyServices = () => {
             </span>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {biomassProjects.map((project, index) => (
-              <div
-                key={project}
-                className="h-48 rounded-xl border-2 border-border bg-card shadow-md hover:shadow-xl hover:border-[#1f5a45] transition-all duration-300 p-6 flex flex-col justify-between"
-              >
-                <div className="flex items-start justify-between gap-3">
-                  <div className="flex-shrink-0 w-10 h-10 rounded-full bg-[#1f5a45] text-white flex items-center justify-center font-bold text-sm shadow-sm">
-                    {index + 1}
-                  </div>
-                  <div className="flex-1 min-w-0">
-                    <h3 className="text-sm font-bold text-foreground leading-tight line-clamp-2">
-                      {project}
-                    </h3>
-                  </div>
-                </div>
+          <div className="relative" role="region" aria-label="Biomass steam supply projects">
+            <div className="overflow-hidden rounded-2xl">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6" aria-live="polite">
+                {getVisibleProjects().map(({ project, displayNumber }, idx) => (
+                  <div
+                    key={`${currentIndex}-${idx}`}
+                    className="flex-1 min-w-0 animate-fade-in"
+                    style={{ animationDelay: `${idx * 100}ms` }}
+                  >
+                    <div className="h-48 rounded-xl border-2 border-border bg-card shadow-md hover:shadow-xl hover:border-[#1f5a45] transition-all duration-300 p-6 flex flex-col justify-between group">
+                      <div className="flex items-start justify-between gap-3">
+                        <div className="flex-shrink-0 w-10 h-10 rounded-full bg-[#1f5a45] text-white flex items-center justify-center font-bold text-sm shadow-sm">
+                          {displayNumber}
+                        </div>
+                        <div className="flex-1 min-w-0">
+                          <h3 className="text-sm font-bold text-foreground leading-tight line-clamp-2 group-hover:text-[#1f5a45] transition-colors">
+                            {project}
+                          </h3>
+                        </div>
+                      </div>
 
-                <div className="space-y-3">
-                  <div className="h-px bg-border/50" />
-                  <p className="text-xs text-muted-foreground leading-relaxed">
-                    Biomass-based steam supply with full compliance to international audit and safety requirements.
-                  </p>
-                </div>
+                      <div className="space-y-3">
+                        <div className="h-px bg-border/50" />
+                        <p className="text-xs text-muted-foreground leading-relaxed">
+                          Biomass-based steam supply with full compliance to international audit and safety requirements.
+                        </p>
+                      </div>
 
-                <div className="flex items-center gap-2 mt-auto pt-2">
-                  <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
-                  <span className="text-xs font-medium text-muted-foreground">Active Project</span>
-                </div>
+                      <div className="flex items-center gap-2 mt-auto pt-2">
+                        <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
+                        <span className="text-xs font-medium text-muted-foreground">Active Project</span>
+                      </div>
+                    </div>
+                  </div>
+                ))}
               </div>
-            ))}
+            </div>
+
+            <div className="mt-6 flex items-center justify-between">
+              <div className="flex items-center gap-2">
+                {biomassProjects.map((_, idx) => (
+                  <button
+                    key={idx}
+                    type="button"
+                    onClick={() => setCurrentIndex(idx)}
+                    className={`h-2 rounded-full transition-all duration-300 ${
+                      idx === currentIndex
+                        ? "w-8 bg-[#1f5a45]"
+                        : "w-2 bg-border hover:bg-[#1f5a45]/50"
+                    }`}
+                    aria-label={`Go to project ${idx + 1}`}
+                  />
+                ))}
+              </div>
+
+              <div className="flex items-center gap-3">
+                <button
+                  type="button"
+                  onClick={() => setCurrentIndex((p) => (p - 1 + biomassProjects.length) % biomassProjects.length)}
+                  className="w-10 h-10 rounded-full border-2 border-border bg-background text-foreground flex items-center justify-center hover:bg-[#1f5a45] hover:text-white hover:border-[#1f5a45] transition-all duration-300 shadow-sm"
+                  aria-label="Previous biomass projects"
+                >
+                  <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M15 18l-6-6 6-6v12z" />
+                  </svg>
+                </button>
+                <button
+                  type="button"
+                  onClick={() => setCurrentIndex((p) => (p + 1) % biomassProjects.length)}
+                  className="w-10 h-10 rounded-full bg-[#1f5a45] text-white flex items-center justify-center shadow-md hover:bg-[#184635] hover:shadow-lg transition-all duration-300"
+                  aria-label="Next biomass projects"
+                >
+                  <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M9 6l6 6-6 6V6z" />
+                  </svg>
+                </button>
+              </div>
+            </div>
           </div>
         </div>
       </section>

@@ -11,7 +11,7 @@ import About from "./pages/About";
 import Services from "./pages/Services";
 import Products from "./pages/Products";
 import ProductDetail from "./pages/ProductDetail";
-import Blog from "./pages/Blog";
+// import Blog from "./pages/Blog"; // Temporarily disabled
 import Contact from "./pages/Contact";
 import Quote from "./pages/Quote";
 import Admin from "./pages/Admin";
@@ -21,6 +21,7 @@ import AfterSalesServices from "./pages/AfterSalesServices";
 import SteamSupplyServices from "./pages/SteamSupplyServices";
 import SparePartsServices from "./pages/SparePartsServices";
 import Values from "./pages/Values";
+import Projects from "./pages/Projects";
 
 const queryClient = new QueryClient();
 
@@ -43,8 +44,9 @@ const AppContent = () => {
               <Route path="/services/steam-supply" element={<SteamSupplyServices />} />
               <Route path="/services/spare-parts" element={<SparePartsServices />} />
               <Route path="/products" element={<Products />} />
+              <Route path="/projects" element={<Projects />} />
               <Route path="/products/:slug" element={<ProductDetail />} />
-              <Route path="/blog" element={<Blog />} />
+              {/* <Route path="/blog" element={<Blog />} /> */}
               <Route path="/contact" element={<Contact />} />
               <Route path="/quote" element={<Quote />} />
               <Route path="/admin" element={<Admin />} />

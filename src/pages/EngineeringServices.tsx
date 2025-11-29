@@ -181,23 +181,40 @@ const EngineeringServices = () => {
 
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
             {services.map((s) => (
-              <div key={s.title} className="group bg-white rounded-2xl border-2 border-[#e1e6e2] shadow-lg hover:shadow-2xl hover:border-[#1f5a45]/30 transition-all duration-300 hover:-translate-y-1 overflow-hidden">
-                <div className="relative h-56 overflow-hidden bg-[#f5f7f6]">
-                  <img src={s.image} alt={s.title} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" loading="lazy" decoding="async" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#123326]/60 via-transparent to-transparent" />
-                  <div className="absolute top-4 right-4">
-                    <div className="w-12 h-12 rounded-full bg-gradient-to-br from-[#1f5a45] to-[#2d7a5e] flex items-center justify-center shadow-lg">
+              <div
+                key={s.title}
+                className="group bg-white rounded-2xl border-2 border-[#e1e6e2] shadow-md hover:shadow-2xl hover:border-[#1f5a45]/30 transition-all duration-300 hover:-translate-y-1 flex flex-col"
+              >
+                <div className="p-6 flex flex-col h-full">
+                  <div className="flex items-start justify-between mb-4">
+                    <div className="w-12 h-12 rounded-full bg-gradient-to-br from-[#1f5a45] to-[#2d7a5e] flex items-center justify-center shadow-lg text-white">
                       {s.icon}
                     </div>
+                    <span className="text-[10px] font-semibold tracking-[0.18em] uppercase text-[#b8892e]">
+                      Engineering
+                    </span>
                   </div>
-                </div>
-                <div className="p-6">
-                  <h3 className="text-xl font-bold text-[#123326] mb-3">{s.title}</h3>
-                  <p className="text-muted-foreground mb-6 leading-relaxed">{s.description}</p>
-                  <Button className="w-full bg-[#1f5a45] hover:bg-[#184635] text-white shadow-md">
-                    Learn More
-                    <ArrowRight className="w-4 h-4 ml-2" aria-hidden="true" />
-                  </Button>
+
+                  <h3 className="text-lg md:text-xl font-bold text-[#123326] mb-2">{s.title}</h3>
+                  <p className="text-sm text-muted-foreground mb-4 leading-relaxed">
+                    {s.description}
+                  </p>
+
+                  <ul className="space-y-2 mb-6">
+                    {s.features.map((f) => (
+                      <li key={f} className="flex items-center gap-2 text-sm text-muted-foreground">
+                        <CheckCircle className="w-4 h-4 text-[#1f5a45]" aria-hidden="true" />
+                        <span>{f}</span>
+                      </li>
+                    ))}
+                  </ul>
+
+                  <div className="mt-auto pt-2">
+                    <Button className="w-full bg-[#1f5a45] hover:bg-[#184635] text-white shadow-md">
+                      Learn More
+                      <ArrowRight className="w-4 h-4 ml-2" aria-hidden="true" />
+                    </Button>
+                  </div>
                 </div>
               </div>
             ))}

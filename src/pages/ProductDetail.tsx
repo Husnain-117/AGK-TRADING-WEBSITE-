@@ -78,7 +78,7 @@ const thermalOilHeaterImages = [
 // Product database with full details
 const productDatabase: Record<string, ProductDetailData> = {
   "gas-oil-fired-boilers": {
-    name: "Gas & Oil Package Type & Fire Tube Steam Boilers",
+    name: "Gas & Oil Water Tube & Package Type Steam Boiler",
     slug: "gas-oil-fired-boilers",
     heroImage: "/Gas & Oil Steam Boiler/3.jpeg.jpg",
     description:
@@ -468,18 +468,6 @@ const ProductDetail = () => {
                         className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-[#123326]/60 via-transparent to-transparent" />
-                    </div>
-                    <div className="p-5 space-y-3">
-                      <h3 className="text-base font-semibold text-[#123326]">
-                        {product.name}
-                      </h3>
-                      <p className="text-xs text-muted-foreground">
-                        Professional industrial boiler installation and manufacturing
-                      </p>
-                      <div className="flex items-center justify-between pt-2">
-                        <span className="text-xs text-[#1f5a45] font-medium">Preview Available</span>
-                        <CheckCircle2 className="w-4 h-4 text-[#b8892e]" />
-                      </div>
                     </div>
                   </div>
                 ))}
