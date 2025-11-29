@@ -19,7 +19,7 @@ const Products = () => {
       name: "Gas & Oil Fired Boilers",
       slug: "gas-oil-fired-boilers",
       shortDescription:
-        "High-efficiency package type and water tube steam boilers designed for faster steam production, superior heat transfer, and long-term industrial reliability.",
+        "High-efficiency package type fire tube steam boilers designed for faster steam production, superior heat transfer, and long-term industrial reliability.",
       highlights: [
         "Wet Back & Dry Back Fire Tube",
         "A-Type, D-Type & O-Type Water Tube",

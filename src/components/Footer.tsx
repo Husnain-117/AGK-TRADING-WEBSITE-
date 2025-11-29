@@ -26,9 +26,9 @@ const Footer = () => {
           {/* About / Brand */}
           <div>
             <div className="flex items-center gap-3">
-              <img src="/logo.jpg" alt="AK Traders" className="w-10 h-10 rounded-md object-contain ring-1 ring-primary-foreground/20 bg-white" />
+              <img src="/logo.jpg" alt="AGK Trading Company Private Limited" className="w-10 h-10 rounded-md object-contain ring-1 ring-primary-foreground/20 bg-white" />
               <div>
-                <div className="text-lg font-bold">AK Traders</div>
+                <div className="text-lg font-bold">AGK Trading Company Private Limited</div>
                 <div className="text-xs text-primary-foreground/80">Great minds for better services</div>
               </div>
             </div>
@@ -89,7 +89,7 @@ const Footer = () => {
         </div>
 
         <div className="mt-10 h-px w-full bg-primary-foreground/10" />
-        <p className="mt-4 text-center text-xs text-primary-foreground/80">Copyright © {currentYear} AK Traders. All Rights Reserved</p>
+        <p className="mt-4 text-center text-xs text-primary-foreground/80">Copyright © {currentYear} AGK Trading Company Private Limited. All Rights Reserved</p>
       </div>
     </footer>
   );

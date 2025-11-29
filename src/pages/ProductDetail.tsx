@@ -77,7 +77,7 @@ const thermalOilHeaterImages = [
 // Product database with full details
 const productDatabase: Record<string, ProductDetailData> = {
   "gas-oil-fired-boilers": {
-    name: "Gas & Oil Package Type & Water Tube Steam Boilers",
+    name: "Gas & Oil Package Type & Fire Tube Steam Boilers",
     slug: "gas-oil-fired-boilers",
     heroImage: "/Gas & Oil Steam Boiler/3.jpeg.jpg",
     description:

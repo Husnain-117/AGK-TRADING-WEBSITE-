@@ -91,7 +91,8 @@ const About = () => {
 
   const team = [
     {
-      name: "Mr. Amir Saeed",
+      name: "Haji Abdul Ghafoor",
+      
       position: "CEO & Founder",
       bio: "20+ years in industrial manufacturing",
       photo: "/team/ceo&Founder.jpg"
@@ -103,8 +104,8 @@ const About = () => {
       photo: "/team/Drirector.jpg"
     },
     {
-      name: "Chief Technology Officer",
-      position: "CTO",
+      name: "Mr. Amir Saeed",
+      position: "Chief Executive",
       bio: "Specialized in supply chain management",
       photo: "/team/CTO.jpg"
     }
@@ -158,7 +159,7 @@ const About = () => {
 
         <div className="relative container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center animate-fade-in py-10">
-            <h1 className="text-4xl md:text-5xl font-bold text-white drop-shadow-md mb-4">About AK Traders</h1>
+            <h1 className="text-4xl md:text-5xl font-bold text-white drop-shadow-md mb-4">About AGK Trading Company Private Limited</h1>
             <p className="text-xl text-white/90 max-w-3xl mx-auto">
               Building the future of industrial excellence, one innovation at a time
             </p>

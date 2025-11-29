@@ -199,7 +199,7 @@ const Home = () => {
       name: "Muhammad Ali",
       company: "Century Textiles",
       text:
-        "AK Traders delivered a highly efficient waste heat recovery solution. Fuel savings and plant uptime have both improved significantly.",
+        "AGK Trading Company Private Limiteddelivered a highly efficient waste heat recovery solution. Fuel savings and plant uptime have both improved significantly.",
       avatar:
         "https://images.unsplash.com/photo-1758887261865-a2b89c0f7ac5?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     },
@@ -342,7 +342,7 @@ const Home = () => {
                   <Link to="/quote">Request a Quote</Link>
                 </Button>
                 <Button asChild variant="outline" size="lg">
-                  <Link to="/about">About AK Traders</Link>
+                  <Link to="/about">About AGK Trading Company Private Limited</Link>
                 </Button>
               </div>
             </div>
@@ -352,7 +352,7 @@ const Home = () => {
               <div className="rounded-3xl overflow-hidden shadow-[0_30px_80px_-20px_rgba(0,0,0,0.35)] ring-1 ring-border">
                 <img
                   src="https://images.unsplash.com/photo-1705147219565-fe9f6f369d03?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                  alt="Industrial systems by AK Traders"
+                  alt="Industrial systems by AGK Trading Company Private Limited"
                   className="w-full h-[380px] object-cover"
                   loading="lazy"
                   decoding="async"
