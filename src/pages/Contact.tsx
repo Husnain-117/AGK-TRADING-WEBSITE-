@@ -210,6 +210,32 @@ const Contact = () => {
           </div>
         </div>
       </section>
+
+      {/* Google Location */}
+      <section className="pb-16 bg-white">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-5xl mx-auto">
+            <h2 className="text-2xl md:text-3xl font-bold text-[#123326] mb-4 text-center">
+              Our Location on Google Maps
+            </h2>
+            <p className="text-sm md:text-base text-muted-foreground text-center mb-6">
+              Head Office: Faisal Colony Street #01, Plot #01, Arifwala Road, Sahiwal
+            </p>
+            <div className="rounded-2xl overflow-hidden border-2 border-[#e1e6e2] shadow-sm h-[320px] md:h-[420px]">
+              <iframe
+                title="AGK Trading Company Location"
+                src="https://www.google.com/maps?q=30.6061992645264,73.0946655273438&output=embed"
+                width="100%"
+                height="100%"
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                className="w-full h-full border-0"
+                allowFullScreen
+              />
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
   );
 };

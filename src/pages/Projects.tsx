@@ -20,11 +20,7 @@ const projects: ProjectItem[] = [
     title: "Supplied & Installed Chain Grate Boiler (20 TON/HOUR)",
     location: "Ravi Rice Mill, Okara",
   },
-  {
-    image: "/Projects/Ghani Ghee-2017.jpeg.jpg",
-    title: "Supplied & Installed Boiler Project",
-    location: "Ghani Ghee, (2017)",
-  },
+  
   {
     image: "/Projects/Sadiq Ghee.jpeg.jpg",
     title: "Supplied and Installed Fixed Bed Boilers and Steam Supply On Biomass Fuel (150 TON/DAY)",
@@ -69,6 +65,11 @@ const projects: ProjectItem[] = [
     image: "/Projects/Kashmir Oil 01.jpeg.jpg",
     title: "Supplied & Installed Chain Grate & Fixed Bed Boilers & Steam Supply on Biomass Fuel (600 TON/DAY)",
     location: "United Industries (Kashmir Cooking Oil & Banaspati), Faisalabad",
+  },
+  {
+    image: "/Projects/Ghani Ghee-2017.jpeg.jpg",
+    title: " Delivered Fire Tube Boiler (14 TON/HOUR) ",
+    location: "Kiran Ghee Mill,Daska",
   },
   {
     image: "/Projects/Shahkam 01.jpeg.jpg",
