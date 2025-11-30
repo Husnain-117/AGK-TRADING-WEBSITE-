@@ -35,18 +35,7 @@ const SparePartsServices = () => {
       ],
       images: [5, 6, 7, 8],
     },
-    {
-      title: "Environment Protection Equipment",
-      description:
-        "Air pollution control equipment to help plants meet environmental and EPA-compliant emission standards.",
-      bullets: [
-        "Multi Cyclone",
-        "Double Cyclone",
-        "ASH Rotary Valve",
-        "Wet Scrubber",
-      ],
-      images: [21, 22, 23, 24],
-    },
+   
     {
       title: "Boiler House Accessories",
       description:
@@ -82,6 +71,18 @@ const SparePartsServices = () => {
         "ASH Screw Worm",
       ],
       images: [17, 18, 19, 20],
+    },
+     {
+      title: "Environment Protection Equipment",
+      description:
+        "Air pollution control equipment to help plants meet environmental and EPA-compliant emission standards.",
+      bullets: [
+        "Multi Cyclone",
+        "Double Cyclone",
+        "ASH Rotary Valve",
+        "Wet Scrubber",
+      ],
+      images: [21, 22, 23, 24],
     },
     {
       title: "Boiler Auxiliary Equipment",

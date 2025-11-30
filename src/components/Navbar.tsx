@@ -138,18 +138,6 @@ const Navbar = () => {
                       >
                         Steam Supply Services
                       </Link>
-                      <Link
-                        to="/services/after-sales"
-                        className="px-3 py-2 rounded-md text-sm font-medium text-gray-800 hover:text-[#1f5a45] hover:bg-[#1f5a45]/5 transition-colors"
-                      >
-                        After Sales Services
-                      </Link>
-                      <Link
-                        to="/quote"
-                        className="px-3 py-2 rounded-md text-sm font-medium text-gray-800 hover:text-[#1f5a45] hover:bg-[#1f5a45]/5 transition-colors"
-                      >
-                        Get a Quote
-                      </Link>
                     </div>
                   </NavigationMenuContent>
                 </NavigationMenuItem>
@@ -288,20 +276,6 @@ const Navbar = () => {
                     onClick={() => setIsOpen(false)}
                   >
                     Steam Supply Services
-                  </Link>
-                  <Link
-                    to="/services/after-sales"
-                    className="py-1 text-sm hover:text-[#1f5a45] transition-colors"
-                    onClick={() => setIsOpen(false)}
-                  >
-                    After Sales Services
-                  </Link>
-                  <Link
-                    to="/quote"
-                    className="py-1 text-sm hover:text-[#1f5a45] transition-colors"
-                    onClick={() => setIsOpen(false)}
-                  >
-                    Get a Quote
                   </Link>
                 </div>
               </details>
