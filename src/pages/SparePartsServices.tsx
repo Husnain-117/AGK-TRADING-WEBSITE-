@@ -40,12 +40,12 @@ const SparePartsServices = () => {
       description:
         "Air pollution control equipment to help plants meet environmental and EPA-compliant emission standards.",
       bullets: [
-        "Multi-cyclone dust collectors",
-        "Wet scrubbers and gas washing units",
-        "Bag filters and ESP systems",
-        "Flue gas ducts and expansion joints",
+        "Multi Cyclone",
+        "Double Cyclone",
+        "ASH Rotary Valve",
+        "Wet Scrubber",
       ],
-      images: [9, 10, 11, 12],
+      images: [21, 22, 23, 24],
     },
     {
       title: "Boiler House Accessories",
@@ -57,7 +57,7 @@ const SparePartsServices = () => {
         "Super Heater",
         "Steam Header",
       ],
-      images: [13, 14, 15, 16],
+      images: [9, 10, 11, 12],
     },
     {
       title: "Chain Grate Spare Parts",
@@ -69,7 +69,7 @@ const SparePartsServices = () => {
         "Chain Grate Parts",
         "Feeding Damper",
       ],
-      images: [17, 18, 19, 20],
+      images: [13, 14, 15, 16],
     },
     {
       title: "Fuel Feeding & Ash Conveyor",
@@ -81,7 +81,7 @@ const SparePartsServices = () => {
         "ASH Conveyor",
         "ASH Screw Worm",
       ],
-      images: [21, 22, 23, 24],
+      images: [17, 18, 19, 20],
     },
     {
       title: "Boiler Auxiliary Equipment",

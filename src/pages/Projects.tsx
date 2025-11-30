@@ -21,6 +21,16 @@ const projects: ProjectItem[] = [
     location: "Ravi Rice Mill, Okara",
   },
   {
+    image: "/Projects/Ghani Ghee-2017.jpeg.jpg",
+    title: "Supplied & Installed Boiler Project",
+    location: "Ghani Ghee, (2017)",
+  },
+  {
+    image: "/Projects/Sadiq Ghee.jpeg.jpg",
+    title: "Supplied and Installed Fixed Bed Boilers and Steam Supply On Biomass Fuel (150 TON/DAY)",
+    location: "Sitara Vegetable Oil Mill, Lahore.",
+  },
+  {
     image: "/Projects/Nishat Dairy.jpeg.jpg",
     title: "Supplied & Installed Fixed Bed Boiler & Steam Supply on Biomass Fuel (130 TON/DAY)",
     location: "Nishat Sutas Dairy Limited, Faisalabad",
@@ -46,12 +56,12 @@ const projects: ProjectItem[] = [
     location: "Punjab Oil Mills (Canolive Oil), Islamabad",
   },
   {
-    image: "/Projects/Nubahar Unit #02.jpeg.jpg",
+    image: "/Projects/8.jpg",
     title: "Supplied & Installed Fixed Bed Boiler & Steam Supply on Biomass Fuel (150 TON/DAY)",
     location: "Naubahar Bottling Company Unit #02 (Pepsi Cola), Gujranwala",
   },
   {
-    image: "/Projects/Nubahar Unit #01.jpeg.jpg",
+    image: "/Projects/9.jpg",
     title: "Supplied & Installed Fixed Bed Boiler & Steam Supply on Biomass Fuel (150 TON/DAY)",
     location: "Naubahar Bottling Company Unit #01 (Pepsi Cola), Gujranwala",
   },
@@ -97,8 +107,8 @@ const projects: ProjectItem[] = [
   },
   {
     image: "/Projects/Punjab Rice.jpeg.jpg",
-    title: "Delivered Fire Tube Boiler (14 TON/HOUR)",
-    location: "Kiran Ghee Mills / Punjab Rice Mill, Kasur",
+    title: "Delivered Fire Tube Boiler (08 TON/HOUR)",
+    location: "Punjab Rice Mill, Kasur",
   },
   {
     image: "/Projects/Shabbair Paper.jpeg.jpg",
@@ -109,16 +119,6 @@ const projects: ProjectItem[] = [
     image: "/Projects/Rose Paper.jpeg.jpg",
     title: "Delivered Fire Tube Boiler (10 TON/HOUR)",
     location: "Rose Paper Mill, Sahiwal",
-  },
-  {
-    image: "/Projects/Ghani Ghee-2017.jpeg.jpg",
-    title: "Supplied & Installed Boiler Project",
-    location: "Ghani Ghee, (2017)",
-  },
-  {
-    image: "/Projects/Sadiq Ghee.jpeg.jpg",
-    title: "Supplied & Installed Boiler Project",
-    location: "Sadiq Ghee",
   },
 ];
 
@@ -176,9 +176,6 @@ const Projects = () => {
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#123326]/60 via-transparent to-transparent" />
-                  <div className="absolute top-4 left-4 px-3 py-1 rounded-full bg-black/50 text-white text-xs font-semibold tracking-wide">
-                    Project {idx + 1}
-                  </div>
                 </div>
               </button>
             ))}

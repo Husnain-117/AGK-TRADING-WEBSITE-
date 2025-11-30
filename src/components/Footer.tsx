@@ -84,19 +84,19 @@ const Footer = () => {
                 <span className="flex flex-col">
                   <span>Director: Mr. Mian Ammar Usama</span>
                   <span>+92 300 4493333, +92 316 4044444</span>
+                  <span>ammar87311@gmail.com</span>
                 </span>
               </div>
               <div className="flex items-center gap-2">
                 <Mail className="w-4 h-4" />
                 <span>agktrading365@gmail.com</span>
-                <span>ammar87311@gmail.com</span>
               </div>
             </div>
           </div>
         </div>
 
         <div className="mt-10 h-px w-full bg-primary-foreground/10" />
-        <p className="mt-4 text-center text-xs text-primary-foreground/80">Copyright © {currentYear} AGK Trading Company Private Limited. All Rights Reserved</p>
+        <p className="mt-4 text-center text-xs text-primary-foreground/80">Copyright {currentYear} AGK Trading Company Private Limited. All Rights Reserved</p>
       </div>
     </footer>
   );
