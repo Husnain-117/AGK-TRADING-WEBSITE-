@@ -48,14 +48,16 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Our Services */}
+          {/* Quick Links */}
           <div>
-            <h3 className="text-lg font-semibold">Our Services</h3>
+            <h3 className="text-lg font-semibold">Quick Links</h3>
             <ul className="mt-4 space-y-2 text-sm text-primary-foreground/90">
-              <li><Link to="/about" className="hover:text-white">About Company</Link></li>
-              <li><Link to="/services" className="hover:text-white">Services</Link></li>
-              <li><Link to="/blog" className="hover:text-white">News & Updates</Link></li>
+              <li><Link to="/" className="hover:text-white">Home</Link></li>
+              <li><Link to="/about" className="hover:text-white">About Us</Link></li>
               <li><Link to="/products" className="hover:text-white">Products</Link></li>
+              <li><Link to="/projects" className="hover:text-white">Projects</Link></li>
+              <li><Link to="/services" className="hover:text-white">Services</Link></li>
+              <li><Link to="/services/spare-parts" className="hover:text-white">Spare Parts</Link></li>
               <li><Link to="/quote" className="hover:text-white">Get a Quote</Link></li>
             </ul>
           </div>
