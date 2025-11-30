@@ -212,26 +212,48 @@ const Contact = () => {
       </section>
 
       {/* Google Location */}
-      <section className="pb-16 bg-white">
+      <section className="pb-16 bg-gradient-to-b from-[#f5f7f6] to-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-5xl mx-auto">
-            <h2 className="text-2xl md:text-3xl font-bold text-[#123326] mb-4 text-center">
-              Our Location on Google Maps
-            </h2>
-            <p className="text-sm md:text-base text-muted-foreground text-center mb-6">
-              Head Office: Faisal Colony Street #01, Plot #01, Arifwala Road, Sahiwal
-            </p>
-            <div className="rounded-2xl overflow-hidden border-2 border-[#e1e6e2] shadow-sm h-[320px] md:h-[420px]">
-              <iframe
-                title="AGK Trading Company Location"
-                src="https://www.google.com/maps?q=30.6061992645264,73.0946655273438&output=embed"
-                width="100%"
-                height="100%"
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-                className="w-full h-full border-0"
-                allowFullScreen
-              />
+          <div className="max-w-6xl mx-auto">
+            <div className="text-center mb-8">
+              <span className="inline-flex items-center px-3 py-1 rounded-full text-[11px] font-semibold tracking-[0.18em] uppercase bg-[#1f5a45]/5 text-[#1f5a45]">
+                Location
+              </span>
+              <h2 className="mt-3 text-2xl md:text-3xl font-bold text-[#123326]">
+                Our Location on Google Maps
+              </h2>
+              <p className="mt-2 text-sm md:text-base text-muted-foreground max-w-2xl mx-auto">
+                Head Office: Faisal Colony Street #01, Plot #01, Arifwala Road, Sahiwal
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-[minmax(0,1.1fr)_minmax(0,1.6fr)] gap-6 items-stretch">
+              <div className="h-full rounded-2xl border border-[#e1e6e2] bg-white shadow-sm p-6 flex flex-col justify-center">
+                <h3 className="text-lg font-semibold text-[#123326] mb-3">Visit Our Head Office</h3>
+                <p className="text-sm text-muted-foreground mb-4">
+                  You can find AGK Trading Company (Pvt) Limited on the main Arifwala Road in Sahiwal. Use the
+                  Google Map to get directions or explore the surrounding area.
+                </p>
+                <div className="space-y-1 text-sm">
+                  <p className="font-semibold text-[#123326]">Address</p>
+                  <p className="text-muted-foreground">
+                    Faisal Colony Street #01, Plot #01, Arifwala Road, Sahiwal
+                  </p>
+                </div>
+              </div>
+
+              <div className="rounded-2xl overflow-hidden border-2 border-[#e1e6e2] shadow-md h-[320px] md:h-[420px] bg-white">
+                <iframe
+                  title="AGK Trading Company Location"
+                  src="https://www.google.com/maps?q=30.6061992645264,73.0946655273438&output=embed"
+                  width="100%"
+                  height="100%"
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  className="w-full h-full border-0"
+                  allowFullScreen
+                />
+              </div>
             </div>
           </div>
         </div>
