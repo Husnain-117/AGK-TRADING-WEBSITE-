@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import { useState } from "react";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
@@ -8,6 +9,28 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import aboutTeam from "@/assets/about-team.jpg";
 
 const Contact = () => {
+  const [name, setName] = useState("");
+  const [phone, setPhone] = useState("");
+  const [subject, setSubject] = useState("");
+  const [message, setMessage] = useState("");
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+
+    const lines = [
+      name && `Name: ${name}`,
+      phone && `Phone: ${phone}`,
+      subject && `Subject: ${subject}`,
+      message && `Message: ${message}`,
+    ].filter(Boolean);
+
+    const text = lines.length
+      ? lines.join("%0A")
+      : "Hello, I would like to know more about your services.";
+
+    const url = `https://wa.me/923164044444?text=${text}`;
+    window.open(url, "_blank");
+  };
   const contactInfo = [
     {
       icon: MapPin,
@@ -79,19 +102,23 @@ const Contact = () => {
             <Card className="border-2 border-[#e1e6e2] rounded-2xl shadow-lg bg-white">
               <CardContent className="p-8 md:p-10">
                 <h2 className="text-2xl font-bold text-[#123326] mb-6">Send us a Message</h2>
-                <form className="space-y-6">
+                <form className="space-y-6" onSubmit={handleSubmit}>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
                       <label className="block text-sm font-medium text-foreground mb-2">
                         Name *
                       </label>
-                      <Input placeholder="John Doe" />
+                      <Input
+                        placeholder="Your name"
+                        value={name}
+                        onChange={(e) => setName(e.target.value)}
+                      />
                     </div>
                     <div>
                       <label className="block text-sm font-medium text-foreground mb-2">
                         Email *
                       </label>
-                      <Input type="email" placeholder="john@example.com" />
+                      <Input type="email" placeholder="Your email" />
                     </div>
                   </div>
                   
@@ -100,13 +127,18 @@ const Contact = () => {
                       <label className="block text-sm font-medium text-foreground mb-2">
                         Phone
                       </label>
-                      <Input type="tel" placeholder="+92 300 8690691" />
+                      <Input
+                        type="tel"
+                        placeholder="Your phone number"
+                        value={phone}
+                        onChange={(e) => setPhone(e.target.value)}
+                      />
                     </div>
                     <div>
                       <label className="block text-sm font-medium text-foreground mb-2">
                         Company
                       </label>
-                      <Input placeholder="Your Company" />
+                      <Input placeholder="Your company (optional)" />
                     </div>
                   </div>
 
@@ -114,18 +146,11 @@ const Contact = () => {
                     <label className="block text-sm font-medium text-foreground mb-2">
                       Subject *
                     </label>
-                    <Select>
-                      <SelectTrigger>
-                        <SelectValue placeholder="Select a subject" />
-                      </SelectTrigger>
-                      <SelectContent>
-                        <SelectItem value="engineering">Engineering Services</SelectItem>
-                        <SelectItem value="after-sales">After Sales Support</SelectItem>
-                        <SelectItem value="spares">Boiler Spares & Parts</SelectItem>
-                        <SelectItem value="general">General Inquiry</SelectItem>
-                        <SelectItem value="other">Other</SelectItem>
-                      </SelectContent>
-                    </Select>
+                    <Input
+                      placeholder="Your subject (e.g. Engineering Services Inquiry)"
+                      value={subject}
+                      onChange={(e) => setSubject(e.target.value)}
+                    />
                   </div>
 
                   <div>
@@ -133,8 +158,10 @@ const Contact = () => {
                       Message *
                     </label>
                     <Textarea
-                      placeholder="Tell us about your project or inquiry..."
+                      placeholder="Your message – tell us about your project or inquiry..."
                       rows={6}
+                      value={message}
+                      onChange={(e) => setMessage(e.target.value)}
                     />
                   </div>
 
@@ -168,15 +195,39 @@ const Contact = () => {
                     </div>
                   ))}
                 </div>
+
+                {/* WhatsApp Contact */}
+                <a
+                  href="https://wa.me/923164044444"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-5 block rounded-2xl bg-[#128C7E] hover:bg-[#0e6f64] text-white px-5 py-4 shadow-md hover:shadow-lg transition-all duration-200"
+                >
+                  <div className="flex items-center gap-3">
+                    <div className="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center">
+                      <span className="text-xl leading-none">☎</span>
+                    </div>
+                    <div className="flex flex-col">
+                      <span className="text-sm font-semibold">WhatsApp</span>
+                      <span className="text-xs text-white/80">Chat with us at +92 316 4044444</span>
+                    </div>
+                  </div>
+                </a>
               </div>
 
               {/* Map */}
               <Card className="overflow-hidden border-2 border-[#e1e6e2] rounded-2xl bg-[#f5f7f6]">
-                <div className="h-64 flex items-center justify-center px-6 text-center">
-                  <p className="text-muted-foreground text-sm">
-                    Map integration coming soon. Use the above head office and engineering works addresses to
-                    locate AGK Industrial Services.
-                  </p>
+                <div className="h-64">
+                  <iframe
+                    title="AGK Trading Company Location (Sidebar)"
+                    src="https://www.google.com/maps?q=30.6061992645264,73.0946655273438&output=embed"
+                    width="100%"
+                    height="100%"
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                    className="w-full h-full border-0"
+                    allowFullScreen
+                  />
                 </div>
               </Card>
             </div>
