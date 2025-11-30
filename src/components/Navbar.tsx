@@ -15,6 +15,7 @@ const Navbar = () => {
 
   const navLinks = [
     { name: "Projects", path: "/projects" },
+    { name: "Spare Parts", path: "/services/spare-parts" },
   ];
 
   return (
@@ -310,6 +311,13 @@ const Navbar = () => {
                 onClick={() => setIsOpen(false)}
               >
                 Projects
+              </Link>
+              <Link
+                to="/services/spare-parts"
+                className="py-2 font-medium hover:text-[#1f5a45] transition-colors"
+                onClick={() => setIsOpen(false)}
+              >
+                Spare Parts
               </Link>
               <Button
                 asChild
