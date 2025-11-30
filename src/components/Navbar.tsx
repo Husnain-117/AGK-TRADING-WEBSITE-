@@ -305,11 +305,11 @@ const Navbar = () => {
                 </div>
               </details>
               <Link
-                to="/blog"
+                to="/projects"
                 className="py-2 font-medium hover:text-[#1f5a45] transition-colors"
                 onClick={() => setIsOpen(false)}
               >
-                Blog
+                Projects
               </Link>
               <Button
                 asChild

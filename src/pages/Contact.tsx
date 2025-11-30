@@ -37,14 +37,6 @@ const Contact = () => {
       answer: "Project timelines vary based on scope and complexity. Simple consulting projects may take 2-4 weeks, while comprehensive manufacturing solutions can range from 3-6 months. We provide detailed timelines during the consultation phase."
     },
     {
-      question: "Do you offer international services?",
-      answer: "Yes, we have experience working with clients globally. We offer remote consulting, on-site visits, and comprehensive support for international projects."
-    },
-    {
-      question: "What certifications do you hold?",
-      answer: "AGK Trading Company Private Limited is ISO 9001:2015 certified for quality management. We also maintain compliance with industry-specific standards including AS9100 for aerospace and IATF 16949 for automotive sectors."
-    },
-    {
       question: "Can you customize products to our specifications?",
       answer: "Absolutely! Custom solutions are one of our core strengths. We work closely with clients to design, engineer, and manufacture products that meet exact specifications and requirements."
     },
