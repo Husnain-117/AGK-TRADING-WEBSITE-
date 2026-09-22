@@ -58,7 +58,7 @@ const AppContent = () => {
 
       {/* Global WhatsApp Floating Button */}
       <a
-        href="https://wa.me/923004493333"
+        href="https://wa.me/923028644418"
         target="_blank"
         rel="noopener noreferrer"
         className="fixed right-4 bottom-4 z-50 inline-flex items-center gap-2 rounded-full bg-[#128C7E] hover:bg-[#0e6f64] text-white px-4 py-2 shadow-lg hover:shadow-xl transition-all text-sm"

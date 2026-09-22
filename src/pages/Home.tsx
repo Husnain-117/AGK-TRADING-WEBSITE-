@@ -267,7 +267,7 @@ const Home = () => {
                 </div>
                 <div>
                   <div className="text-xs uppercase tracking-wider font-semibold text-white/80">Phone Number</div>
-                  <div className="text-xl font-bold text-white">Office: 0300-4493333</div>
+                  <div className="text-xl font-bold text-white">Office: 0302-8644418</div>
                 </div>
               </div>
             </div>

@@ -28,7 +28,7 @@ const Contact = () => {
       ? lines.join("%0A")
       : "Hello, I would like to know more about your services.";
 
-    const url = `https://wa.me/923004493333?text=${text}`;
+    const url = `https://wa.me/923028644418?text=${text}`;
     window.open(url, "_blank");
   };
   const contactInfo = [
@@ -46,7 +46,7 @@ const Contact = () => {
       icon: Mail,
       title: "Contact Details",
       content:
-        "C.E.O: Mr. Amir Saeed – +92 300 8690691\nDirector: Mr. Mian Ammar Usama – +92 300 4493333, +92 316 4044444\nEmail: agktrading365@gmail.com",
+        "C.E.O: Mr. Amir Saeed – +92 300 8690691\nDirector: Mr. Mian Ammar Usama – +92 302 8644418\nEmail: agktrading365@gmail.com",
     },
   ];
 
@@ -198,7 +198,7 @@ const Contact = () => {
 
                 {/* WhatsApp Contact */}
                 <a
-                  href="https://wa.me/923004493333"
+                  href="https://wa.me/923028644418"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="mt-5 block rounded-2xl bg-[#128C7E] hover:bg-[#0e6f64] text-white px-5 py-4 shadow-md hover:shadow-lg transition-all duration-200"
@@ -209,7 +209,7 @@ const Contact = () => {
                     </div>
                     <div className="flex flex-col">
                       <span className="text-sm font-semibold">WhatsApp</span>
-                      <span className="text-xs text-white/80">Chat with us at +92 300 4493333</span>
+                      <span className="text-xs text-white/80">Chat with us at +92 302 8644418</span>
                     </div>
                   </div>
                 </a>

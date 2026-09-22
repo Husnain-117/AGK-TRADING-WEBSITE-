@@ -23,7 +23,7 @@ const Navbar = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           <Link to="/" className="flex items-center space-x-3">
-            <img src="/logo.jpg" alt="AGK Traders Logo" className="h-9 w-9 rounded-full object-contain ring-1 ring-border" />
+            <img src="/logo.jpeg" alt="AGK Traders Logo" className="h-9 w-9 rounded-full object-contain ring-1 ring-border" />
             <div className="text-lg sm:text-xl font-bold text-foreground hidden sm:block">AGK Trading Company Private Limited</div>
           </Link>
 

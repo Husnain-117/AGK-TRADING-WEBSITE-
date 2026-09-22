@@ -380,7 +380,7 @@ const Quote = () => {
                 <p className="text-xs text-muted-foreground leading-relaxed whitespace-pre-line">
                   C.E.O: Mr. Amir Saeed  +92 300 8690691
                   {"\n"}
-                  Director: Mr. Mian Ammar Usama  +92 300 4493333, +92 316 4044444
+                  Director: Mr. Mian Ammar Usama  +92 302 8644418
                   {"\n"}
                   Email: agktrading365@gmail.com
                 </p>
